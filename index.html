@@ -3,164 +3,677 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermes Data Services - Professional Websites & Digital Solutions</title>
+    <title>Hermes Data Services | Professional Data, Websites & Automation</title>
+    <meta name="description" content="Expert data cleanup, website building, and business automation services. No subscriptions, no contracts — just results.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.6; }
-        .hero { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #1a1d2e 0%, #161825 50%, #1a1d2e 100%); border-bottom: 1px solid #2d3348; }
-        .hero h1 { font-size: 2.5em; margin-bottom: 15px; background: linear-gradient(90deg, #7c5cff, #4ecdc4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.2em; color: #94a3b8; max-width: 600px; margin: 0 auto 30px; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
-        .card { background: #1a1d2e; border: 1px solid #2d3348; border-radius: 15px; padding: 35px; transition: transform 0.2s, border-color 0.2s; }
-        .card:hover { transform: translateY(-5px); border-color: #7c5cff; }
-        .card h3 { color: #7c5cff; font-size: 1.4em; margin-bottom: 15px; }
-        .card .price { font-size: 2.5em; font-weight: 700; color: #4ecdc4; margin: 20px 0; }
-        .card ul { list-style: none; padding: 0; }
-        .card li { padding: 8px 0; color: #cbd5e1; }
-        .card li:before { content: "✓ "; color: #4ecdc4; font-weight: bold; }
-        .cta { display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #7c5cff 0%, #5b3dcc 100%); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 1.1em; transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
-        .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(124, 92, 255, 0.3); }
-        .section-title { font-size: 2em; text-align: center; margin-bottom: 10px; }
-        .section-subtitle { text-align: center; color: #94a3b8; margin-bottom: 50px; }
-        .trust { display: flex; justify-content: center; gap: 40px; margin: 40px 0; flex-wrap: wrap; }
-        .trust-item { text-align: center; }
-        .trust-item .number { font-size: 2.5em; font-weight: 700; color: #7c5cff; }
-        .trust-item .label { color: #94a3b8; font-size: 0.9em; }
-        .process { background: #1a1d2e; border-radius: 15px; padding: 40px; margin: 40px 0; border: 1px solid #2d3348; }
-        .process h2 { color: #7c5cff; margin-bottom: 20px; text-align: center; }
-        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .step { text-align: center; padding: 20px; }
-        .step-number { width: 50px; height: 50px; background: #7c5cff; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; font-weight: 700; margin: 0 auto 15px; }
-        footer { text-align: center; padding: 40px; color: #64748b; border-top: 1px solid #2d3348; margin-top: 60px; }
-        .contact { text-align: center; margin-top: 60px; padding: 40px; background: #1a1d2e; border-radius: 15px; border: 1px solid #2d3348; }
-        .contact h2 { color: #7c5cff; margin-bottom: 15px; }
+        
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface-2: #1f1f1f;
+            --border: #2a2a2a;
+            --text: #f5f5f5;
+            --text-2: #a1a1a1;
+            --accent: #3b82f6;
+            --accent-dark: #2563eb;
+            --success: #22c55e;
+            --radius: 12px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 16px 0;
+        }
+        
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .nav-logo span { color: var(--accent); }
+        
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .nav-cta:hover { background: var(--accent-dark); }
+        
+        /* Hero */
+        .hero {
+            padding: 160px 24px 100px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            color: var(--text-2);
+            margin-bottom: 32px;
+        }
+        
+        .hero-badge i { color: var(--success); font-size: 11px; }
+        
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 60px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 span { color: var(--accent); }
+        
+        .hero p {
+            font-size: 19px;
+            color: var(--text-2);
+            max-width: 640px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-primary:hover { background: var(--accent-dark); }
+        
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover { background: var(--surface-2); }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 24px;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 32px;
+            background: var(--surface);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-2);
+        }
+        
+        /* Section */
+        .section {
+            padding: 0 24px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-header p {
+            color: var(--text-2);
+            font-size: 18px;
+        }
+        
+        /* Cards Grid */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+        
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 100px;
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--success);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--surface-2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+        
+        .card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .card p {
+            color: var(--text-2);
+            font-size: 15px;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        
+        .card-price {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .card-price span {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-2);
+        }
+        
+        .card-note {
+            font-size: 13px;
+            color: var(--text-2);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        
+        .card-features {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+        
+        .card-features li {
+            font-size: 14px;
+            color: var(--text-2);
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-features li i {
+            color: var(--success);
+            font-size: 12px;
+        }
+        
+        .card-btn {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        /* How It Works */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-num {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .step p {
+            color: var(--text-2);
+            font-size: 15px;
+        }
+        
+        /* CTA */
+        .cta {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 80px 40px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 100px;
+        }
+        
+        .cta h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            color: var(--text-2);
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-2);
+            font-size: 14px;
+        }
+        
+        .footer a { color: var(--accent); text-decoration: none; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 17px; }
+            .section-header h2 { font-size: 30px; }
+            .cards { grid-template-columns: 1fr; }
+            .cta h2 { font-size: 28px; }
+        }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>🚀 Grow Your Business Online</h1>
-        <p>Professional websites and digital solutions for local businesses. No monthly fees. No tech headaches. Just results.</p>
-        <a href="#services" class="cta">See What We Offer</a>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">Hermes<span>.</span></a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">
+            <i class="fas fa-circle"></i> Available Now — Fast Turnaround
+        </div>
+        <h1>Expert <span>data, websites & automation</span> for your business</h1>
+        <p>No subscriptions. No contracts. No endless meetings. Just tell me what you need, and I deliver — usually within 24-48 hours.</p>
+        <div class="hero-actions">
+            <a href="mailto:mrbubba@agentmail.to?subject=Project%20Inquiry" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> Get a Free Quote
+            </a>
+            <a href="#services" class="btn btn-secondary">
+                <i class="fas fa-th"></i> View Services
+            </a>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-value">24h</div>
+            <div class="stat-label">Standard Delivery</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Satisfaction Rate</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">Flexible</div>
+            <div class="stat-label">Pricing & Revisions</div>
+        </div>
     </div>
 
-    <div class="container">
-        <div class="trust">
-            <div class="trust-item">
-                <div class="number">24h</div>
-                <div class="label">Delivery</div>
+    <section class="section" id="services">
+        <div class="section-header">
+            <h2>What I Can Do For You</h2>
+            <p>Professional services at fair prices. Every project includes unlimited revisions until you're happy.</p>
+        </div>
+        
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-broom"></i></div>
+                <h3>Data Cleanup & Organization</h3>
+                <p>Messy spreadsheets, duplicate records, inconsistent formatting — I'll transform your data into something clean and usable.</p>
+                <div class="card-price">$75+ <span>/file</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Price varies by complexity — negotiable for bulk work</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Remove duplicates & errors</li>
+                    <li><i class="fas fa-check"></i> Standardize dates, phones, addresses</li>
+                    <li><i class="fas fa-check"></i> Add calculations & categories</li>
+                    <li><i class="fas fa-check"></i> CSV, Excel, or text files</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Data%20Cleanup%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
             </div>
-            <div class="trust-item">
-                <div class="number">100%</div>
-                <div class="label">Satisfaction</div>
+
+            <div class="card">
+                <div class="card-badge">Most Popular</div>
+                <div class="card-icon"><i class="fas fa-globe"></i></div>
+                <h3>Professional Website</h3>
+                <p>A beautiful, mobile-friendly website for your business. Built fast, hosted free, designed to bring you customers.</p>
+                <div class="card-price">$299+ <span>/site</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Flexible pricing — let's talk about your needs</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> 5 custom pages</li>
+                    <li><i class="fas fa-check"></i> Mobile-friendly design</li>
+                    <li><i class="fas fa-check"></i> Contact form & Google Maps</li>
+                    <li><i class="fas fa-check"></i> Free hosting setup</li>
+                    <li><i class="fas fa-check"></i> Unlimited revisions</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Website%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
             </div>
-            <div class="trust-item">
-                <div class="number">Unlimited</div>
-                <div class="label">Revisions</div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-robot"></i></div>
+                <h3>Business Automation</h3>
+                <p>Repetitive tasks eating your time? I'll write custom scripts that do the work for you — faster and error-free.</p>
+                <div class="card-price">$150+ <span>/project</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Depends on complexity — send details for exact quote</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Custom Python scripts</li>
+                    <li><i class="fas fa-check"></i> File processing automation</li>
+                    <li><i class="fas fa-check"></i> Report generation</li>
+                    <li><i class="fas fa-check"></i> Documentation included</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Automation%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
             </div>
-            <div class="trust-item">
-                <div class="number">Secure</div>
-                <div class="label">Payment via PayPal</div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-file-excel"></i></div>
+                <h3>Spreadsheet Templates</h3>
+                <p>Custom Excel templates built for your specific needs — budgets, invoices, trackers, reports — with formulas already set up.</p>
+                <div class="card-price">$25+ <span>/template</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Bulk discounts available — ask about your needs</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Budget & invoice templates</li>
+                    <li><i class="fas fa-check"></i> Project trackers</li>
+                    <li><i class="fas fa-check"></i> Sales & inventory sheets</li>
+                    <li><i class="fas fa-check"></i> Pre-built formulas</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Spreadsheet%20Template%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-file-pdf"></i></div>
+                <h3>PDF Processing & OCR</h3>
+                <p>Need to extract data from PDFs? I'll pull out text, tables, and information into clean CSV, Excel, or Word formats.</p>
+                <div class="card-price">$30+ <span>/project</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Based on page count & complexity — negotiable for large batches</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Text extraction</li>
+                    <li><i class="fas fa-check"></i> Table extraction to Excel</li>
+                    <li><i class="fas fa-check"></i> OCR for scanned documents</li>
+                    <li><i class="fas fa-check"></i> Any PDF to any format</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=PDF%20Processing%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                <h3>Data Visualization</h3>
+                <p>Raw data tells no stories. I'll create professional charts, graphs, and dashboards that make your data easy to understand.</p>
+                <div class="card-price">$75+ <span>/project</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Price scales with number of visualizations — package deals available</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Custom charts & graphs</li>
+                    <li><i class="fas fa-check"></i> Interactive dashboards</li>
+                    <li><i class="fas fa-check"></i> Report-ready visuals</li>
+                    <li><i class="fas fa-check"></i> Multiple format exports</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Data%20Visualization%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-pen-fancy"></i></div>
+                <h3>Resume & Cover Letter</h3>
+                <p>Get more interviews with a professionally tailored resume and cover letter that passes ATS systems and impresses hiring managers.</p>
+                <div class="card-price">$45+ <span>/set</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Includes both resume + cover letter — negotiable for multiple versions</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> ATS-optimized formatting</li>
+                    <li><i class="fas fa-check"></i> Keyword optimization</li>
+                    <li><i class="fas fa-check"></i> Industry-specific tailoring</li>
+                    <li><i class="fas fa-check"></i> Unlimited revisions</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Resume%20Tailoring%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h3>Email Copywriting</h3>
+                <p>Emails that actually get opened and replied to. I write welcome sequences, promotional campaigns, and follow-ups.</p>
+                <div class="card-price">$25+ <span>/email</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Bundle pricing available — cheaper per email for sequences</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Welcome & onboarding sequences</li>
+                    <li><i class="fas fa-check"></i> Promotional campaigns</li>
+                    <li><i class="fas fa-check"></i> Follow-up templates</li>
+                    <li><i class="fas fa-check"></i> A/B test variations</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Email%20Copywriting%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                <h3>Business Proposals</h3>
+                <p>Win more clients with professional proposals that clearly communicate your value and close deals.</p>
+                <div class="card-price">$99+ <span>/proposal</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Based on scope — send project details for exact quote</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Custom proposals</li>
+                    <li><i class="fas fa-check"></i> Professional formatting</li>
+                    <li><i class="fas fa-check"></i> PDF & Word delivery</li>
+                    <li><i class="fas fa-check"></i> Revision until approved</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Proposal%20Writing%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-plug"></i></div>
+                <h3>API Integration</h3>
+                <p>Connect your tools together — Google Sheets to your CRM, orders to your email list, inventory to your website. Automated data flow.</p>
+                <div class="card-price">$150+ <span>/integration</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Depends on complexity — most integrations $150-300 range</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Google Sheets ↔ CRM</li>
+                    <li><i class="fas fa-check"></i> E-commerce automation</li>
+                    <li><i class="fas fa-check"></i> Email list sync</li>
+                    <li><i class="fas fa-check"></i> Custom webhooks</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=API%20Integration%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-database"></i></div>
+                <h3>Database Reports</h3>
+                <p>Turn your data into professional reports with charts, summaries, and insights that matter to your business.</p>
+                <div class="card-price">$99+ <span>/report</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Custom reports available — negotiable for ongoing weekly/monthly</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> HTML report with charts</li>
+                    <li><i class="fas fa-check"></i> Automated insights</li>
+                    <li><i class="fas fa-check"></i> Trend analysis</li>
+                    <li><i class="fas fa-check"></i> Schedule recurring reports</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Database%20Report%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-hashtag"></i></div>
+                <h3>Social Media Content</h3>
+                <p>A full month of posts, captions, and hashtags — ready to publish. Consistent content without the daily hassle.</p>
+                <div class="card-price">$99+ <span>/month</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Includes 20-30 posts — custom packages negotiable</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> 20-30 posts per month</li>
+                    <li><i class="fas fa-check"></i> Platform-specific captions</li>
+                    <li><i class="fas fa-check"></i> Hashtag research</li>
+                    <li><i class="fas fa-check"></i> Content calendar</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Social%20Media%20Content%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-search"></i></div>
+                <h3>Lead List Research</h3>
+                <p>Need customers? I compile targeted lists with company names, emails, phone numbers — exactly who you want to reach.</p>
+                <div class="card-price">$75+ <span>/list</span></div>
+                <div class="card-note"><i class="fas fa-handshake"></i> Based on criteria — 25/50/100 lead packages available</div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Targeted by industry & location</li>
+                    <li><i class="fas fa-check"></i> Verified contact info</li>
+                    <li><i class="fas fa-check"></i> CSV/Excel delivery</li>
+                    <li><i class="fas fa-check"></i> Custom criteria</li>
+                </ul>
+                <a href="mailto:mrbubba@agentmail.to?subject=Lead%20List%20Inquiry" class="btn btn-primary card-btn">Get Quote</a>
             </div>
         </div>
+    </section>
 
-        <h2 class="section-title" id="services">What We Offer</h2>
-        <p class="section-subtitle">Everything your business needs to succeed online</p>
-
-        <div class="services">
-            <div class="card">
-                <h3>🌐 Professional Website</h3>
-                <p>Custom 5-page website for your business</p>
-                <div class="price">$299</div>
-                <ul>
-                    <li>Custom design for your business</li>
-                    <li>Mobile-friendly (most customers are on phones)</li>
-                    <li>Contact form and click-to-call</li>
-                    <li>Photo gallery of your work</li>
-                    <li>Customer testimonials section</li>
-                    <li>Google Maps integration</li>
-                    <li>SEO optimized</li>
-                    <li>Free hosting setup</li>
-                </ul>
-                <br>
-                <a href="#contact" class="cta">Get Started</a>
-            </div>
-
-            <div class="card">
-                <h3>📊 Data Cleanup Service</h3>
-                <p>Clean, organize, and transform your messy data</p>
-                <div class="price">$75</div>
-                <ul>
-                    <li>Clean & standardize one file</li>
-                    <li>CSV, Excel, or text</li>
-                    <li>24-hour delivery</li>
-                    <li>Unlimited revisions</li>
-                    <li>Remove duplicates</li>
-                    <li>Standardize formats</li>
-                    <li>Add calculations</li>
-                    <li>Data quality report</li>
-                </ul>
-                <br>
-                <a href="#contact" class="cta">Get Started</a>
-            </div>
-
-            <div class="card">
-                <h3>🤖 Business Automation</h3>
-                <p>Automate repetitive tasks and save hours every week</p>
-                <div class="price">$150</div>
-                <ul>
-                    <li>Custom Python script</li>
-                    <li>Automate data processing</li>
-                    <li>Automate reporting</li>
-                    <li>Save 5-10 hours per week</li>
-                    <li>Documentation included</li>
-                    <li>30-day support</li>
-                    <li>Custom integrations</li>
-                    <li>Training on how to use it</li>
-                </ul>
-                <br>
-                <a href="#contact" class="cta">Get Started</a>
-            </div>
-        </div>
-
-        <div class="process">
+    <section class="section">
+        <div class="section-header">
             <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h4>Contact Us</h4>
-                    <p>Email us about your project</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h4>Free Quote</h4>
-                    <p>We'll review and send a quote</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h4>Pay via PayPal</h4>
-                    <p>Secure payment to start work</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h4>Delivery</h4>
-                    <p>Get your product within 24-48 hours</p>
-                </div>
+            <p>Simple, straightforward, no surprises.</p>
+        </div>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>You Email Me</h4>
+                <p>Tell me what you need. The more detail, the better the quote.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>Free Quote</h4>
+                <p>I respond within hours with a clear price and timeline.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>I Deliver</h4>
+                <p>Pay via PayPal, then I complete your project. Usually 24-48 hours.</p>
             </div>
         </div>
+    </section>
 
-        <div class="contact" id="contact">
-            <h2>Ready to Get Started?</h2>
-            <p style="color: #94a3b8; margin: 15px 0 25px;">Email us and we'll get back to you within 24 hours with a free quote.</p>
-            <a href="mailto:mrbubba@agentmail.to" class="cta">📧 mrbubba@agentmail.to</a>
-            <p style="color: #64748b; margin-top: 20px; font-size: 0.9em;">Payment via PayPal only. Satisfaction guaranteed.</p>
+    <section class="section">
+        <div class="cta">
+            <h2>Ready to get started?</h2>
+            <p>No commitment. No upfront cost. Just email me what you need, and I'll send a free quote.</p>
+            <a href="mailto:mrbubba@agentmail.to?subject=Project%20Inquiry" class="btn btn-primary" style="font-size: 18px; padding: 20px 40px;">
+                <i class="fas fa-envelope"></i> mrbubba@agentmail.to
+            </a>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>Hermes Data Services • Professional Websites & Digital Solutions</p>
-        <p style="margin-top: 10px;">Contact: mrbubba@agentmail.to</p>
-        <p style="margin-top: 10px; font-size: 0.8em;">© 2026 Hermes Data Services. All rights reserved.</p>
+    <footer class="footer">
+        <p>Hermes Data Services &mdash; Professional solutions for your business</p>
+        <p style="margin-top: 8px;">Email: <a href="mailto:mrbubba@agentmail.to">mrbubba@agentmail.to</a> &mdash; Payment via PayPal</p>
     </footer>
 </body>
 </html>

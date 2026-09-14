@@ -3,280 +3,567 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermes Web Development | Custom Web Applications & SaaS Products</title>
-    <meta name="description" content="Custom web applications, SaaS products, internal tools, and customer portals built end-to-end. React, Node.js, Python, PostgreSQL. $2,000 - $25,000+.">
+    <title>Hermes — Web Development, Data & Automation</title>
+    <meta name="description" content="Custom web applications, data cleanup, and business automation. Full-stack development with React, Node.js, Python. No agencies, no handoffs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #0a0a0a; --surface: #141414; --surface-2: #1f1f1f; --border: #2a2a2a; --text: #f5f5f5; --text-2: #a1a1a1; --accent: #3b82f6; --accent-dark: #2563eb; --success: #22c55e; --radius: 12px; }
+        :root {
+            --bg: #000000;
+            --surface: #0a0a0a;
+            --surface-2: #141414;
+            --border: #1f1f1f;
+            --text: #fafafa;
+            --text-2: #888888;
+            --text-3: #555555;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --radius: 16px;
+            --max-width: 1200px;
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-        .nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(10,10,10,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 100; padding: 16px 0; }
-        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-size: 20px; font-weight: 700; color: var(--text); text-decoration: none; }
-        .nav-logo span { color: var(--accent); }
-        .nav-cta { background: var(--accent); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.2s; }
-        .nav-cta:hover { background: var(--accent-dark); }
-        .hero { padding: 160px 24px 100px; text-align: center; max-width: 900px; margin: 0 auto; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); padding: 6px 16px; border-radius: 100px; font-size: 13px; color: var(--text-2); margin-bottom: 32px; }
-        .hero-badge i { color: var(--success); font-size: 11px; }
-        .hero h1 { font-size: clamp(36px, 6vw, 60px); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 24px; }
-        .hero h1 span { color: var(--accent); }
-        .hero p { font-size: 19px; color: var(--text-2); max-width: 640px; margin: 0 auto 48px; line-height: 1.6; }
-        .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
-        .btn-primary { background: var(--accent); color: white; }
-        .btn-primary:hover { background: var(--accent-dark); }
-        .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
-        .btn-secondary:hover { background: var(--surface-2); }
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto 100px; padding: 0 24px; }
-        .stat { text-align: center; padding: 32px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); }
-        .stat-value { font-size: 36px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
-        .stat-label { font-size: 14px; color: var(--text-2); }
-        .section { padding: 0 24px 100px; max-width: 1200px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 64px; }
-        .section-header h2 { font-size: 40px; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; }
-        .section-header p { color: var(--text-2); font-size: 18px; }
-        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; }
-        .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; transition: all 0.2s; position: relative; overflow: hidden; }
-        .card:hover { border-color: var(--accent); transform: translateY(-4px); }
-        .card-badge { position: absolute; top: 20px; right: 20px; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 100px; background: rgba(34, 197, 94, 0.1); color: var(--success); border: 1px solid rgba(34, 197, 94, 0.2); }
-        .card-icon { width: 52px; height: 52px; background: var(--surface-2); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--accent); margin-bottom: 24px; }
-        .card h3 { font-size: 22px; font-weight: 600; margin-bottom: 12px; }
-        .card p { color: var(--text-2); font-size: 15px; margin-bottom: 24px; line-height: 1.7; }
-        .card-price { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
-        .card-price span { font-size: 15px; font-weight: 500; color: var(--text-2); }
-        .card-note { font-size: 13px; color: var(--text-2); margin-bottom: 24px; font-style: italic; }
-        .card-features { list-style: none; margin-bottom: 28px; }
-        .card-features li { font-size: 14px; color: var(--text-2); padding: 6px 0; display: flex; align-items: center; gap: 10px; }
-        .card-features li i { color: var(--success); font-size: 12px; }
-        .card-btn { width: 100%; justify-content: center; }
-        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto 60px; }
-        .tech { text-align: center; padding: 24px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); }
-        .tech i { font-size: 36px; color: var(--accent); margin-bottom: 12px; }
-        .tech-name { font-size: 14px; font-weight: 600; }
-        .process { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 900px; margin: 0 auto; }
-        .step { text-align: center; }
-        .step-num { width: 48px; height: 48px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; margin: 0 auto 20px; }
-        .step h4 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
-        .step p { color: var(--text-2); font-size: 15px; }
-        .cta { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 80px 40px; text-align: center; max-width: 800px; margin: 0 auto 100px; }
-        .cta h2 { font-size: 40px; font-weight: 700; margin-bottom: 20px; }
-        .cta p { color: var(--text-2); font-size: 18px; margin-bottom: 40px; }
-        .footer { text-align: center; padding: 60px 24px; border-top: 1px solid var(--border); color: var(--text-2); font-size: 14px; }
-        .footer a { color: var(--accent); text-decoration: none; }
-        @media (max-width: 768px) { .hero h1 { font-size: 36px; } .hero p { font-size: 17px; } .section-header h2 { font-size: 30px; } .cards { grid-template-columns: 1fr; } .cta h2 { font-size: 28px; } }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 20px 0;
+        }
+        
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-2);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover { color: var(--text); }
+        
+        .nav-cta {
+            background: var(--text);
+            color: var(--bg);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .nav-cta:hover { background: #e0e0e0; }
+        
+        /* Hero */
+        .hero {
+            padding: 200px 32px 120px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        
+        .hero-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 32px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 32px;
+            max-width: 900px;
+        }
+        
+        .hero h1 .serif {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--text-2);
+        }
+        
+        .hero-subtitle {
+            font-size: 22px;
+            color: var(--text-2);
+            max-width: 600px;
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 18px 36px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--text);
+            color: var(--bg);
+        }
+        
+        .btn-primary:hover { background: #e0e0e0; }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover { border-color: var(--text-2); }
+        
+        /* Section */
+        .section {
+            padding: 120px 32px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+        
+        .section-intro {
+            font-size: 18px;
+            color: var(--text-2);
+            max-width: 600px;
+            margin-bottom: 64px;
+        }
+        
+        /* Bento Grid */
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+        
+        .bento-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bento-item:hover {
+            border-color: var(--text-3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .bento-item.featured {
+            background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+            border-color: var(--accent);
+        }
+        
+        .bento-item.large { grid-column: span 8; }
+        .bento-item.medium { grid-column: span 6; }
+        .bento-item.small { grid-column: span 4; }
+        
+        .bento-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--surface-2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+        
+        .bento-item h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+        
+        .bento-item p {
+            color: var(--text-2);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .bento-price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--text-3);
+        }
+        
+        .bento-price strong {
+            color: var(--text);
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        /* Process */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+        }
+        
+        .process-step {
+            padding: 32px;
+            background: var(--surface);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        
+        .step-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        
+        .process-step h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .process-step p {
+            color: var(--text-2);
+            font-size: 14px;
+        }
+        
+        /* CTA */
+        .cta {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 100px 60px;
+            text-align: center;
+            margin: 0 32px 120px;
+            max-width: var(--max-width);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .cta p {
+            color: var(--text-2);
+            font-size: 18px;
+            margin-bottom: 48px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 60px 32px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-text {
+            color: var(--text-3);
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .footer-links a {
+            color: var(--text-2);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover { color: var(--text); }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .bento-item.large, .bento-item.medium, .bento-item.small {
+                grid-column: span 12;
+            }
+            
+            .hero h1 { font-size: 48px; }
+            .nav-links { display: none; }
+            .cta { padding: 60px 32px; }
+            .footer { flex-direction: column; text-align: center; }
+        }
+        
+        /* Scroll animations */
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fade-up 0.6s ease both;
+            animation-timeline: view();
+            animation-range: entry 0% entry 30%;
+        }
     </style>
 </head>
 <body>
     <nav class="nav">
         <div class="nav-inner">
-            <a href="/" class="nav-logo">Hermes<span>.</span></a>
+            <a href="/" class="nav-logo">Hermes</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#process">Process</a>
+                <a href="mailto:mrbubba@agentmail.to?subject=Project%20Inquiry" class="nav-cta">Start a Project →</a>
+            </div>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="hero-badge">
-            <i class="fas fa-circle"></i> Available for Projects — 2-4 Week Delivery
-        </div>
-        <h1>Custom <span>web applications</span> that solve real business problems</h1>
-        <p>From SaaS products to internal tools, customer portals to analytics dashboards — I design, build, and deploy full-stack web applications. No agencies. No handoffs. Just working software.</p>
+        <div class="hero-label mono">Web Development · Data · Automation</div>
+        <h1>I build <span class="serif">software that works</span> for your business</h1>
+        <p class="hero-subtitle">Custom web applications, data cleanup, and business automation. No agencies, no handoffs — just working software delivered in weeks.</p>
         <div class="hero-actions">
-            <a href="mailto:mrbubba@agentmail.to?subject=Web%20App%20Project" class="btn btn-primary">
-                <i class="fas fa-envelope"></i> Start Your Project
-            </a>
-            <a href="#services" class="btn btn-secondary">
-                <i class="fas fa-th"></i> What I Build
-            </a>
+            <a href="mailto:mrbubba@agentmail.to?subject=Project%20Inquiry" class="btn btn-primary">Start Your Project →</a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
         </div>
     </section>
-
-    <div class="stats">
-        <div class="stat">
-            <div class="stat-value">2-4 weeks</div>
-            <div class="stat-label">Delivery Timeline</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">100%</div>
-            <div class="stat-label">Custom Code</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">Unlimited</div>
-            <div class="stat-label">Revisions</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">Secure</div>
-            <div class="stat-label">PayPal Payments</div>
-        </div>
-    </div>
 
     <section class="section" id="services">
-        <div class="section-header">
-            <h2>What I Build</h2>
-            <p>Full-stack web applications with React, Node.js, Python, and PostgreSQL</p>
-        </div>
+        <div class="section-label mono">What I Build</div>
+        <h2>Everything from <span class="serif">simple tools</span> to complex platforms</h2>
+        <p class="section-intro">Low-ticket services to get you started. High-ticket projects that transform your business.</p>
         
-        <div class="cards">
-            <div class="card">
-                <div class="card-badge">Most Popular</div>
-                <div class="card-icon"><i class="fas fa-cloud"></i></div>
-                <h3>SaaS Products</h3>
-                <p>Multi-tenant software-as-a-service platforms with user authentication, subscription billing, admin dashboards, and everything needed to launch.</p>
-                <div class="card-price">$5,000+ <span>/project</span></div>
-                <div class="card-note"><i class="fas fa-handshake"></i> Scope varies — let's discuss your idea</div>
-                <ul class="card-features">
-                    <li><i class="fas fa-check"></i> User auth & roles</li>
-                    <li><i class="fas fa-check"></i> Stripe subscriptions</li>
-                    <li><i class="fas fa-check"></i> Admin dashboard</li>
-                    <li><i class="fas fa-check"></i> Multi-tenant architecture</li>
-                    <li><i class="fas fa-check"></i> API integrations</li>
-                </ul>
-                <a href="mailto:mrbubba@agentmail.to?subject=SaaS%20Product%20Inquiry" class="btn btn-primary card-btn">Start a SaaS Project</a>
+        <div class="bento">
+            <div class="bento-item large featured">
+                <div class="bento-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Custom Web Applications</h3>
+                <p>SaaS products, customer portals, booking systems, analytics dashboards, internal tools, and e-commerce platforms. Built with React, Node.js, Python, and PostgreSQL.</p>
+                <div class="bento-price"><strong>$2,000+</strong> / project — negotiable based on scope</div>
             </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-building"></i></div>
-                <h3>Internal Business Tools</h3>
-                <p>CRMs, inventory management, project trackers, HR systems, and workflow tools that replace messy spreadsheets and manual processes.</p>
-                <div class="card-price">$2,000+ <span>/project</span></div>
-                <div class="card-note"><i class="fas fa-handshake"></i> Based on complexity and integrations needed</div>
-                <ul class="card-features">
-                    <li><i class="fas fa-check"></i> Role-based access control</li>
-                    <li><i class="fas fa-check"></i> Data import/export</li>
-                    <li><i class="fas fa-check"></i> Automated workflows</li>
-                    <li><i class="fas fa-check"></i> Custom reporting</li>
-                    <li><i class="fas fa-check"></i> Email notifications</li>
-                </ul>
-                <a href="mailto:mrbubba@agentmail.to?subject=Internal%20Tool%20Inquiry" class="btn btn-primary card-btn">Build My Tool</a>
+            
+            <div class="bento-item small">
+                <div class="bento-icon"><i class="fas fa-broom"></i></div>
+                <h3>Data Cleanup</h3>
+                <p>Messy spreadsheets fixed fast. Duplicates removed, formats standardized, calculations added.</p>
+                <div class="bento-price"><strong>$75+</strong> / file</div>
             </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-users"></i></div>
-                <h3>Customer Portals</h3>
-                <p>Self-service portals where customers can manage accounts, track orders, submit tickets, make payments, and access documents 24/7.</p>
-                <div class="card-price">$3,000+ <span>/project</span></div>
-                <div class="card-note"><i class="fas fa-handshake"></i> Depends on features and integrations</div>
-                <ul class="card-features">
-                    <li><i class="fas fa-check"></i> Account management</li>
-                    <li><i class="fas fa-check"></i> Payment history & invoicing</li>
-                    <li><i class="fas fa-check"></i> Support ticket system</li>
-                    <li><i class="fas fa-check"></i> Document access</li>
-                    <li><i class="fas fa-check"></i> Order tracking</li>
-                </ul>
-                <a href="mailto:mrbubba@agentmail.to?subject=Customer%20Portal%20Inquiry" class="btn btn-primary card-btn">Get a Portal</a>
+            
+            <div class="bento-item small">
+                <div class="bento-icon"><i class="fas fa-file-excel"></i></div>
+                <h3>Spreadsheet Templates</h3>
+                <p>Custom Excel templates with pre-built formulas. Budgets, invoices, trackers, reports.</p>
+                <div class="bento-price"><strong>$25+</strong> / template</div>
             </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-calendar-check"></i></div>
-                <h3>Booking & Scheduling Systems</h3>
-                <p>Appointment scheduling, resource booking, class reservations — with calendar sync, reminders, payments, and admin management.</p>
-                <div class="card-price">$2,500+ <span>/project</span></div>
-                <div class="card-note"><i class="fas fa-handshake"></i> Complexity-based pricing</div>
-                <ul class="card-features">
-                    <li><i class="fas fa-check"></i> Calendar integration</li>
-                    <li><i class="fas fa-check"></i> Automated reminders</li>
-                    <li><i class="fas fa-check"></i> Payment collection</li>
-                    <li><i class="fas fa-check"></i> Staff management</li>
-                    <li><i class="fas fa-check"></i> Waitlist handling</li>
-                </ul>
-                <a href="mailto:mrbubba@agentmail.to?subject=Booking%20System%20Inquiry" class="btn btn-primary card-btn">Build My System</a>
+            
+            <div class="bento-item small">
+                <div class="bento-icon"><i class="fas fa-file-pdf"></i></div>
+                <h3>PDF Processing</h3>
+                <p>Extract text and tables from PDFs. Convert to Excel, Word, or CSV automatically.</p>
+                <div class="bento-price"><strong>$30+</strong> / project</div>
             </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
-                <h3>Analytics Dashboards</h3>
-                <p>Real-time data visualization, KPI tracking, custom charts, and automated reports. Turn your data into actionable insights.</p>
-                <div class="card-price">$1,500+ <span>/project</span></div>
-                <div class="card-note"><i class="fas fa-handshake"></i> Based on data sources and complexity</div>
-                <ul class="card-features">
-                    <li><i class="fas fa-check"></i> Real-time data</li>
-                    <li><i class="fas fa-check"></i> Custom charts & graphs</li>
-                    <li><i class="fas fa-check"></i> Automated reports</li>
-                    <li><i class="fas fa-check"></i> User-specific views</li>
-                    <li><i class="fas fa-check"></i> Export to PDF/CSV</li>
-                </ul>
-                <a href="mailto:mrbubba@agentmail.to?subject=Analytics%20Dashboard%20Inquiry" class="btn btn-primary card-btn">Build My Dashboard</a>
+            
+            <div class="bento-item medium">
+                <div class="bento-icon"><i class="fas fa-chart-bar"></i></div>
+                <h3>Data Visualization</h3>
+                <p>Charts, graphs, and dashboards that make your data actionable. matplotlib, seaborn, interactive HTML.</p>
+                <div class="bento-price"><strong>$75+</strong> / project</div>
             </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-store"></i></div>
-                <h3>E-Commerce Platforms</h3>
-                <p>Custom online stores with product management, shopping cart, checkout, inventory tracking, and order management — no Shopify fees.</p>
-                <div class="card-price">$4,000+ <span>/project</span></div>
-                <div class="card-note"><i class="fas fa-handshake"></i> Based on product count and features</div>
-                <ul class="card-features">
-                    <li><i class="fas fa-check"></i> Product management</li>
-                    <li><i class="fas fa-check"></i> Shopping cart & checkout</li>
-                    <li><i class="fas fa-check"></i> Inventory tracking</li>
-                    <li><i class="fas fa-check"></i> Order management</li>
-                    <li><i class="fas fa-check"></i> Customer accounts</li>
-                </ul>
-                <a href="mailto:mrbubba@agentmail.to?subject=E-Commerce%20Inquiry" class="btn btn-primary card-btn">Build My Store</a>
+            
+            <div class="bento-item medium">
+                <div class="bento-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h3>Email Copywriting</h3>
+                <p>Welcome sequences, promotional campaigns, follow-ups. Emails that get opened and replied to.</p>
+                <div class="bento-price"><strong>$25+</strong> / email</div>
+            </div>
+            
+            <div class="bento-item medium">
+                <div class="bento-icon"><i class="fas fa-file-alt"></i></div>
+                <h3>Business Proposals</h3>
+                <p>Professional proposals that win clients. Clear scope, pricing, and deliverables.</p>
+                <div class="bento-price"><strong>$99+</strong> / proposal</div>
+            </div>
+            
+            <div class="bento-item medium">
+                <div class="bento-icon"><i class="fas fa-search"></i></div>
+                <h3>Lead List Research</h3>
+                <p>Targeted lists of potential customers with contact info. Industry, location, and size filtered.</p>
+                <div class="bento-price"><strong>$75+</strong> / list</div>
+            </div>
+            
+            <div class="bento-item small">
+                <div class="bento-icon"><i class="fas fa-robot"></i></div>
+                <h3>Automation Scripts</h3>
+                <p>Custom Python scripts that save hours every week. File processing, reporting, data sync.</p>
+                <div class="bento-price"><strong>$150+</strong> / script</div>
+            </div>
+            
+            <div class="bento-item small">
+                <div class="bento-icon"><i class="fas fa-plug"></i></div>
+                <h3>API Integration</h3>
+                <p>Connect your tools together. Google Sheets, CRMs, email lists, payment systems.</p>
+                <div class="bento-price"><strong>$150+</strong> / integration</div>
+            </div>
+            
+            <div class="bento-item small">
+                <div class="bento-icon"><i class="fas fa-database"></i></div>
+                <h3>Database Reports</h3>
+                <p>HTML reports with charts, KPIs, and automated insights. Scheduled delivery.</p>
+                <div class="bento-price"><strong>$99+</strong> / report</div>
+            </div>
+            
+            <div class="bento-item small">
+                <div class="bento-icon"><i class="fas fa-pen-fancy"></i></div>
+                <h3>Resume & Cover Letter</h3>
+                <p>ATS-optimized, tailored to each job. Get more interviews with professional documents.</p>
+                <div class="bento-price"><strong>$45+</strong> / set</div>
+            </div>
+            
+            <div class="bento-item small">
+                <div class="bento-icon"><i class="fas fa-hashtag"></i></div>
+                <h3>Social Media Content</h3>
+                <p>A full month of posts, captags, hashtags. Ready to publish content calendar.</p>
+                <div class="bento-price"><strong>$99+</strong> / month</div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="section-header">
-            <h2>Tech Stack</h2>
-            <p>Modern, proven technologies for fast, reliable applications</p>
-        </div>
+    <section class="section" id="process">
+        <div class="section-label mono">How It Works</div>
+        <h2>Simple process, <span class="serif">serious results</span></h2>
+        <p class="section-intro">No meetings. No contracts. Just email me and I'll handle the rest.</p>
         
-        <div class="tech-grid">
-            <div class="tech"><i class="fab fa-react"></i><div class="tech-name">React</div></div>
-            <div class="tech"><i class="fab fa-node-js"></i><div class="tech-name">Node.js</div></div>
-            <div class="tech"><i class="fab fa-python"></i><div class="tech-name">Python</div></div>
-            <div class="tech"><i class="fas fa-database"></i><div class="tech-name">PostgreSQL</div></div>
-            <div class="tech"><i class="fas fa-bolt"></i><div class="tech-name">FastAPI</div></div>
-            <div class="tech"><i class="fas fa-shield-alt"></i><div class="tech-name">Auth</div></div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="section-header">
-            <h2>How It Works</h2>
-            <p>Simple process from idea to working application</p>
-        </div>
-        
-        <div class="process">
-            <div class="step">
-                <div class="step-num">1</div>
-                <h4>You Tell Me Your Idea</h4>
-                <p>Email me what you want to build. The more detail, the better.</p>
+        <div class="process-grid">
+            <div class="process-step animate">
+                <div class="step-num mono">01</div>
+                <h4>You Email Me</h4>
+                <p>Tell me what you need. A few sentences is enough to start.</p>
             </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <h4>Free Scope & Quote</h4>
-                <p>I respond with a clear plan, timeline, and price.</p>
+            <div class="process-step animate">
+                <div class="step-num mono">02</div>
+                <h4>Free Quote</h4>
+                <p>I respond within hours with a clear price and timeline.</p>
             </div>
-            <div class="step">
-                <div class="step-num">3</div>
+            <div class="process-step animate">
+                <div class="step-num mono">03</div>
                 <h4>I Build It</h4>
-                <p>You'll see progress updates and a working preview.</p>
+                <p>You'll see progress updates and a working preview link.</p>
             </div>
-            <div class="step">
-                <div class="step-num">4</div>
+            <div class="process-step animate">
+                <div class="step-num mono">04</div>
                 <h4>Launch</h4>
-                <p>Pay via PayPal, deploy to production, hand over the keys.</p>
+                <p>Pay via PayPal, deploy to production, hand over everything.</p>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="cta">
-            <h2>Have an idea for a web app?</h2>
-            <p>Email me and I'll send a free scope and quote. No obligation.</p>
-            <a href="mailto:mrbubba@agentmail.to?subject=Web%20App%20Idea" class="btn btn-primary" style="font-size: 18px; padding: 20px 40px;">
-                <i class="fas fa-envelope"></i> mrbubba@agentmail.to
-            </a>
-        </div>
+    <section class="cta">
+        <h2>Ready to start?</h2>
+        <p>No commitment. No upfront cost. Email me what you need, and I'll send a free quote within hours.</p>
+        <a href="mailto:mrbubba@agentmail.to?subject=Project%20Inquiry" class="btn btn-primary" style="font-size: 18px; padding: 20px 40px;">
+            mrbubba@agentmail.to →
+        </a>
     </section>
 
     <footer class="footer">
-        <p>Hermes Web Development — Custom Applications & SaaS Products</p>
-        <p style="margin-top: 8px;">Email: <a href="mailto:mrbubba@agentmail.to">mrbubba@agentmail.to</a> &mdash; Payment via PayPal</p>
+        <div class="footer-text">© 2026 Hermes — Web Development, Data & Automation</div>
+        <div class="footer-links">
+            <a href="mailto:mrbubba@agentmail.to">Email</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+        </div>
     </footer>
 </body>
 </html>

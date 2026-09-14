@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermes Data Services - Professional Websites & Digital Solutions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.6; }
+        .hero { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #1a1d2e 0%, #161825 50%, #1a1d2e 100%); border-bottom: 1px solid #2d3348; }
+        .hero h1 { font-size: 2.5em; margin-bottom: 15px; background: linear-gradient(90deg, #7c5cff, #4ecdc4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2em; color: #94a3b8; max-width: 600px; margin: 0 auto 30px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
+        .card { background: #1a1d2e; border: 1px solid #2d3348; border-radius: 15px; padding: 35px; transition: transform 0.2s, border-color 0.2s; }
+        .card:hover { transform: translateY(-5px); border-color: #7c5cff; }
+        .card h3 { color: #7c5cff; font-size: 1.4em; margin-bottom: 15px; }
+        .card .price { font-size: 2.5em; font-weight: 700; color: #4ecdc4; margin: 20px 0; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 8px 0; color: #cbd5e1; }
+        .card li:before { content: "✓ "; color: #4ecdc4; font-weight: bold; }
+        .cta { display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #7c5cff 0%, #5b3dcc 100%); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 1.1em; transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
+        .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(124, 92, 255, 0.3); }
+        .section-title { font-size: 2em; text-align: center; margin-bottom: 10px; }
+        .section-subtitle { text-align: center; color: #94a3b8; margin-bottom: 50px; }
+        .trust { display: flex; justify-content: center; gap: 40px; margin: 40px 0; flex-wrap: wrap; }
+        .trust-item { text-align: center; }
+        .trust-item .number { font-size: 2.5em; font-weight: 700; color: #7c5cff; }
+        .trust-item .label { color: #94a3b8; font-size: 0.9em; }
+        .process { background: #1a1d2e; border-radius: 15px; padding: 40px; margin: 40px 0; border: 1px solid #2d3348; }
+        .process h2 { color: #7c5cff; margin-bottom: 20px; text-align: center; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .step { text-align: center; padding: 20px; }
+        .step-number { width: 50px; height: 50px; background: #7c5cff; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; font-weight: 700; margin: 0 auto 15px; }
+        footer { text-align: center; padding: 40px; color: #64748b; border-top: 1px solid #2d3348; margin-top: 60px; }
+        .contact { text-align: center; margin-top: 60px; padding: 40px; background: #1a1d2e; border-radius: 15px; border: 1px solid #2d3348; }
+        .contact h2 { color: #7c5cff; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>🚀 Grow Your Business Online</h1>
+        <p>Professional websites and digital solutions for local businesses. No monthly fees. No tech headaches. Just results.</p>
+        <a href="#services" class="cta">See What We Offer</a>
+    </div>
+
+    <div class="container">
+        <div class="trust">
+            <div class="trust-item">
+                <div class="number">24h</div>
+                <div class="label">Delivery</div>
+            </div>
+            <div class="trust-item">
+                <div class="number">100%</div>
+                <div class="label">Satisfaction</div>
+            </div>
+            <div class="trust-item">
+                <div class="number">Unlimited</div>
+                <div class="label">Revisions</div>
+            </div>
+            <div class="trust-item">
+                <div class="number">Secure</div>
+                <div class="label">Payment via PayPal</div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="services">What We Offer</h2>
+        <p class="section-subtitle">Everything your business needs to succeed online</p>
+
+        <div class="services">
+            <div class="card">
+                <h3>🌐 Professional Website</h3>
+                <p>Custom 5-page website for your business</p>
+                <div class="price">$299</div>
+                <ul>
+                    <li>Custom design for your business</li>
+                    <li>Mobile-friendly (most customers are on phones)</li>
+                    <li>Contact form and click-to-call</li>
+                    <li>Photo gallery of your work</li>
+                    <li>Customer testimonials section</li>
+                    <li>Google Maps integration</li>
+                    <li>SEO optimized</li>
+                    <li>Free hosting setup</li>
+                </ul>
+                <br>
+                <a href="#contact" class="cta">Get Started</a>
+            </div>
+
+            <div class="card">
+                <h3>📊 Data Cleanup Service</h3>
+                <p>Clean, organize, and transform your messy data</p>
+                <div class="price">$75</div>
+                <ul>
+                    <li>Clean & standardize one file</li>
+                    <li>CSV, Excel, or text</li>
+                    <li>24-hour delivery</li>
+                    <li>Unlimited revisions</li>
+                    <li>Remove duplicates</li>
+                    <li>Standardize formats</li>
+                    <li>Add calculations</li>
+                    <li>Data quality report</li>
+                </ul>
+                <br>
+                <a href="#contact" class="cta">Get Started</a>
+            </div>
+
+            <div class="card">
+                <h3>🤖 Business Automation</h3>
+                <p>Automate repetitive tasks and save hours every week</p>
+                <div class="price">$150</div>
+                <ul>
+                    <li>Custom Python script</li>
+                    <li>Automate data processing</li>
+                    <li>Automate reporting</li>
+                    <li>Save 5-10 hours per week</li>
+                    <li>Documentation included</li>
+                    <li>30-day support</li>
+                    <li>Custom integrations</li>
+                    <li>Training on how to use it</li>
+                </ul>
+                <br>
+                <a href="#contact" class="cta">Get Started</a>
+            </div>
+        </div>
+
+        <div class="process">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Contact Us</h4>
+                    <p>Email us about your project</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Free Quote</h4>
+                    <p>We'll review and send a quote</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Pay via PayPal</h4>
+                    <p>Secure payment to start work</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Delivery</h4>
+                    <p>Get your product within 24-48 hours</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact" id="contact">
+            <h2>Ready to Get Started?</h2>
+            <p style="color: #94a3b8; margin: 15px 0 25px;">Email us and we'll get back to you within 24 hours with a free quote.</p>
+            <a href="mailto:mrbubba@agentmail.to" class="cta">📧 mrbubba@agentmail.to</a>
+            <p style="color: #64748b; margin-top: 20px; font-size: 0.9em;">Payment via PayPal only. Satisfaction guaranteed.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Hermes Data Services • Professional Websites & Digital Solutions</p>
+        <p style="margin-top: 10px;">Contact: mrbubba@agentmail.to</p>
+        <p style="margin-top: 10px; font-size: 0.8em;">© 2026 Hermes Data Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>

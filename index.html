@@ -721,30 +721,33 @@
         updateTextarea();
     }
 
-    // Initialize event listeners
-    var checkboxes = document.querySelectorAll('input[name="Services"]');
-    checkboxes.forEach(function(cb) {
-        cb.addEventListener('change', updateTextarea);
-    });
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize event listeners
+        var checkboxes = document.querySelectorAll('input[name="Services"]');
+        checkboxes.forEach(function(cb) {
+            cb.addEventListener('change', updateTextarea);
+        });
 
-    // Handle clicks on service links
-    var serviceLinks = document.querySelectorAll('a[href="#contact-form"]');
-    console.log('Found ' + serviceLinks.length + ' service links');
-    serviceLinks.forEach(function(link) {
-        var dataService = link.getAttribute('data-service');
-        console.log('  Link:', link.textContent.trim(), '->', dataService);
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            var ds = this.getAttribute('data-service');
-            console.log('Click! data-service:', ds);
-            if (ds) {
-                preselectService(ds);
-            }
-            // Scroll to form manually
-            var form = document.getElementById('contact-form');
-            if (form) {
-                form.scrollIntoView({behavior: 'smooth'});
-            }
+        // Handle clicks on service links
+        var serviceLinks = document.querySelectorAll('a[href="#contact-form"]');
+        console.log('Found ' + serviceLinks.length + ' service links');
+        serviceLinks.forEach(function(link) {
+            var dataService = link.getAttribute('data-service');
+            console.log('  Link:', link.textContent.trim(), '->', dataService);
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var ds = this.getAttribute('data-service');
+                console.log('Click! data-service:', ds);
+                if (ds) {
+                    preselectService(ds);
+                }
+                // Scroll to form manually
+                var form = document.getElementById('contact-form');
+                if (form) {
+                    form.scrollIntoView({behavior: 'smooth'});
+                }
+            });
         });
     });
 </script></script>

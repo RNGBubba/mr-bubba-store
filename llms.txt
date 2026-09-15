@@ -7,6 +7,7 @@
 - [Store and quote form](https://rngbubba.github.io/mr-bubba-store/): service catalog and project quote form.
 - [Bookkeeping data cleanup](https://rngbubba.github.io/mr-bubba-store/bookkeeping-overflow.html): fixed-scope accounting and bookkeeping spreadsheet cleanup starting at $75.
 - [CSV cleaner](https://rngbubba.github.io/mr-bubba-csv-cleaner/): browser-based CSV cleanup demo with a paid single-file cleanup option.
+- [Free tools catalog](https://rngbubba.github.io/mr-bubba-free-tools/): browser-based invoice, conversion, chart, and n8n starter tools.
 - [n8n CSV to Google Sheets workflow](https://rngbubba.github.io/mr-bubba-store/n8n-csv-google-sheets.html): bounded workflow implementation starting at $150.
 
 ## Services

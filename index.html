@@ -671,19 +671,20 @@
     }
 
     function preselectService(service) {
-        // Already in correct format if it matches a checkbox value
+        if (!service) return;
+        
         var checkboxes = document.querySelectorAll('input[name="Services"]');
         
-        // Try direct match first
+        // Try case-insensitive match first
         var found = false;
         checkboxes.forEach(function(cb) {
-            if (cb.value === service) {
+            if (cb.value.toLowerCase() === service.toLowerCase()) {
                 cb.checked = true;
                 found = true;
             }
         });
         
-        // If no direct match, try keymap conversion
+        // If no match, try keymap conversion
         if (!found) {
             var keymap = {
                 'data-cleanup': 'Data Cleanup',
@@ -702,12 +703,14 @@
                 'resume': 'Resume & Cover Letter'
             };
             
-            var mapped = keymap[service.toLowerCase()] || keymap[service] || service;
-            checkboxes.forEach(function(cb) {
-                if (cb.value === mapped) {
-                    cb.checked = true;
-                }
-            });
+            var mapped = keymap[service.toLowerCase()] || keymap[service];
+            if (mapped) {
+                checkboxes.forEach(function(cb) {
+                    if (cb.value.toLowerCase() === mapped.toLowerCase()) {
+                        cb.checked = true;
+                    }
+                });
+            }
         }
         
         updateTextarea();

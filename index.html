@@ -689,7 +689,7 @@
         };
         
         if (service) {
-            service = keymap[service] || service;
+            service = keymap[service.toLowerCase()] || service;
             var checkboxes = document.querySelectorAll('input[name="Services"]');
             checkboxes.forEach(function(cb) {
                 if (cb.value === service) {

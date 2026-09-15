@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Bubba Services | Professional Data Cleaning & Automation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.6; }
+        .hero { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #1a1d2e 0%, #161825 50%, #1a1d2e 100%); border-bottom: 1px solid #2d3348; }
+        .hero h1 { font-size: 2.5em; margin-bottom: 15px; background: linear-gradient(90deg, #7c5cff, #4ecdc4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2em; color: #94a3b8; max-width: 600px; margin: 0 auto 30px; }
+        .cta { display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #7c5cff 0%, #5b3dcc 100%); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 1.1em; transition: transform 0.2s, box-shadow 0.2s; }
+        .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(124, 92, 255, 0.3); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
+        .card { background: #1a1d2e; border: 1px solid #2d3348; border-radius: 15px; padding: 35px; transition: transform 0.2s, border-color 0.2s; }
+        .card:hover { transform: translateY(-5px); border-color: #7c5cff; }
+        .card h3 { color: #7c5cff; font-size: 1.4em; margin-bottom: 15px; }
+        .card .price { font-size: 2.5em; font-weight: 700; color: #4ecdc4; margin: 20px 0; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 8px 0; color: #cbd5e1; }
+        .card li:before { content: "✓ "; color: #4ecdc4; font-weight: bold; }
+        .section-title { font-size: 2em; text-align: center; margin-bottom: 10px; }
+        .section-subtitle { text-align: center; color: #94a3b8; margin-bottom: 50px; }
+        .demo-section { background: #1a1d2e; border-radius: 15px; padding: 40px; margin: 40px 0; border: 1px solid #2d3348; }
+        .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .demo-box { background: #0f1117; border-radius: 10px; padding: 25px; border: 1px solid #2d3348; }
+        .demo-box h4 { margin-bottom: 15px; }
+        .demo-box pre { background: #0a0c12; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 0.85em; line-height: 1.5; }
+        .demo-before { color: #f87171; }
+        .demo-after { color: #4ecdc4; }
+        .badge { display: inline-block; padding: 5px 12px; background: #2d3348; border-radius: 20px; font-size: 0.8em; color: #94a3b8; margin-right: 10px; }
+        .trust { display: flex; justify-content: center; gap: 40px; margin: 40px 0; flex-wrap: wrap; }
+        .trust-item { text-align: center; }
+        .trust-item .number { font-size: 2.5em; font-weight: 700; color: #7c5cff; }
+        .trust-item .label { color: #94a3b8; font-size: 0.9em; }
+        footer { text-align: center; padding: 40px; color: #64748b; border-top: 1px solid #2d3348; margin-top: 60px; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8em; }
+            .demo-grid { grid-template-columns: 1f; }
+            .services { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>🧹 Messy Data? Fixed Fast.</h1>
+        <p>I clean, organize, and transform your messy spreadsheets, CSVs, and data files into polished, usable formats — within 24 hours.</p>
+        <a href="#pricing" class="cta">See Plans & Get Started</a>
+    </div>
+
+    <div class="container">
+        <div class="demo-section">
+            <h2 class="section-title">Before & After</h2>
+            <p class="section-subtitle">Here's what I do with real data</p>
+            
+            <div class="demo-grid">
+                <div class="demo-box">
+                    <h4 class="demo-before">❌ Before: Messy Customer Data</h4>
+                    <pre>Name,Email,Phone,Date
+John Smith,john@email.com,555-123-4567,01/15/2024
+Jane Doe,jane.doe@gmail.com,(555) 987-6543,3/22/2024
+Bob Johnson,bob.j@company.net,555.456.7890,02/10/2024
+Alice Brown,alice.brown@yahoo,555 234 5678,April 5 2024
+Mike Wilson,mike.w@outlook.com,555-345-6789,05/01/2024</pre>
+                </div>
+                <div class="demo-box">
+                    <h4 class="demo-after">✅ After: Clean, Enriched Data</h4>
+                    <pre>Name,Email,Phone,Date,Tier,LTV
+John Smith,john@email.com,555-123-4567,2024-01-15,Silver,$250
+Jane Doe,jane.doe@gmail.com,555-987-6543,2024-03-22,Gold,$125
+Bob Johnson,bob.j@company.net,555-456-7890,2024-02-10,Bronze,$90
+Alice Brown,alice.brown@yahoo.com,555-234-5678,2024-04-05,Gold,$310
+Mike Wilson,mike.w@outlook.com,555-345-6789,2024-05-01,Lead,$0</pre>
+                </div>
+            </div>
+            <br>
+            <div class="demo-grid">
+                <div class="demo-box">
+                    <h4 class="demo-before">❌ Before: Unstructured Invoice Text</h4>
+                    <pre>RECEIPT #1042 - ABC Supplies
+Date: Sept 3, 2024
+Customer: Acme Corp
+Contact: Bob Smith (bob@acme.com)
+
+Widget A (SKU: WID-A-001)  5  $12.50  $62.50
+Premium Widget B - WID-B-002  3  $28.75  $86.25
+Basic Widget C  10  $4.99  $49.90
+
+Subtotal: $288.65
+Tax (8.5%): $24.53
+TOTAL: $313.18</pre>
+                </div>
+                <div class="demo-box">
+                    <h4 class="demo-after">✅ After: Structured JSON</h4>
+                    <pre>{
+  "customer": {"company": "Acme Corp", ...},
+  "items": [
+    {"sku": "WID-A-001", "qty": 5, "total": 62.50},
+    {"sku": "WID-B-002", "qty": 3, "total": 86.25},
+    {"sku": "WID-C-003", "qty": 10, "total": 49.90}
+  ],
+  "financials": {
+    "subtotal": 288.65,
+    "tax": 24.53,
+    "total": 313.18
+  }
+}</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="trust">
+            <div class="trust-item">
+                <div class="number">24h</div>
+                <div class="label">Delivery</div>
+            </div>
+            <div class="trust-item">
+                <div class="number">100%</div>
+                <div class="label">Satisfaction</div>
+            </div>
+            <div class="trust-item">
+                <div class="number">Unlimited</div>
+                <div class="label">Revisions</div>
+            </div>
+            <div class="trust-item">
+                <div class="number">Secure</div>
+                <div class="label">Data Handling</div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="pricing">Simple Pricing</h2>
+        <p class="section-subtitle">Pay only when you're happy with the result</p>
+
+        <div class="services">
+            <div class="card">
+                <h3>Basic Cleanup</h3>
+                <p>Single file transformation</p>
+                <div class="price">$75</div>
+                <ul>
+                    <li>Clean & standardize one file</li>
+                    <li>CSV, Excel, or text</li>
+                    <li>24-hour delivery</li>
+                    <li>Unlimited revisions</li>
+                    <li>Standard formats</li>
+                </ul>
+                <br>
+                <a href="https://www.paypal.com/checkoutnow?token=4GE57494VV040024T" class="cta">Get Started</a>
+            </div>
+
+            <div class="card">
+                <h3>Pro Package</h3>
+                <p>Multiple files + automation</p>
+                <div class="price">$150</div>
+                <ul>
+                    <li>Everything in Basic</li>
+                    <li>Multiple file processing</li>
+                    <li>Automation script included</li>
+                    <li>Repeat the process yourself</li>
+                    <li>Priority support</li>
+                </ul>
+                <br>
+                <a href="https://www.paypal.com/checkoutnow?token=0TC25304PA682713R" class="cta">Get Started</a>
+            </div>
+
+            <div class="card">
+                <h3>Premium Pipeline</h3>
+                <p>Full data pipeline build</p>
+                <div class="price">$250</div>
+                <ul>
+                    <li>Everything in Pro</li>
+                    <li>Full ETL pipeline</li>
+                    <li>Documentation included</li>
+                    <li>30-day support</li>
+                    <li>Custom integrations</li>
+                </ul>
+                <br>
+                <a href="https://www.paypal.com/checkoutnow?token=7L087868KL2666041" class="cta">Get Started</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <h2>Have a unique data problem?</h2>
+            <p style="color: #94a3b8; margin: 15px 0 25px;">Email me at <a href="mailto:mrbubba@agentmail.to" style="color: #7c5cff;">mrbubba@agentmail.to</a> and I'll get back to you within 24 hours.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Mr Bubba Services • Professional Data Cleaning & Automation</p>
+        <p style="margin-top: 10px;">Contact: mrbubba@agentmail.to</p>
+    </footer>
+</body>
+</html>

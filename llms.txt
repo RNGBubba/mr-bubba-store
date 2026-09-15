@@ -11,6 +11,8 @@
 - [CSV Cleaner Pro](https://rngbubba.github.io/mr-bubba-store/csv-cleaner-pro.html): one-time $15 personal-use Python script for repeatable CSV and Excel cleanup.
 - [Free tools catalog](https://rngbubba.github.io/mr-bubba-free-tools/): browser-based invoice, conversion, chart, and n8n starter tools.
 - [n8n CSV to Google Sheets workflow](https://rngbubba.github.io/mr-bubba-store/n8n-csv-google-sheets.html): bounded workflow implementation starting at $150.
+- [13-Week Cash Visibility Brief](https://rngbubba.github.io/mr-bubba-store/cash-visibility-brief.html): redaction-first operational cash planning pilot from $49; not accounting, tax, legal, lending, investment, or insolvency advice.
+- [Offline Roofing & Stair Calculator](https://rngbubba.github.io/mr-bubba-store/offline-trade-calculator.html): free browser demo and preliminary local trade-calculation pilot from $12; not engineering or code-compliance advice.
 
 ## Services
 

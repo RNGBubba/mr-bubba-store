@@ -548,6 +548,19 @@
     </div>
 </section>
 
+
+<script>
+    // Pre-select service from URL parameter
+    const urlParams = new URLSearchParams(window.location.hash.split('?')[1] || '');
+    const serviceParam = urlParams.get('service');
+    if (serviceParam) {
+        const select = document.querySelector('select[name="Service Type"]');
+        if (select) {
+            select.value = serviceParam.replace(/\+/g, ' ');
+        }
+    }
+</script>
+
 </body>
 </html>
 <!-- CONTACT FORM SECTION -->

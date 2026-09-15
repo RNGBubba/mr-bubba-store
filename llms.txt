@@ -1,0 +1,22 @@
+# Mr Bubba Services
+
+> Independent service operation offering practical web development, data cleanup, spreadsheet help, and business automation.
+
+## Primary pages
+
+- [Store and quote form](https://rngbubba.github.io/mr-bubba-store/): service catalog and project quote form.
+- [Bookkeeping data cleanup](https://rngbubba.github.io/mr-bubba-store/bookkeeping-overflow.html): fixed-scope accounting and bookkeeping spreadsheet cleanup starting at $75.
+- [CSV cleaner](https://rngbubba.github.io/mr-bubba-csv-cleaner/): browser-based CSV cleanup demo with a paid single-file cleanup option.
+
+## Services
+
+- Data cleanup and organization: starting at $75 per file.
+- Websites: starting at $299.
+- Business automation: starting at $150.
+- Spreadsheet templates: starting at $25.
+- PDF processing and OCR: starting at $30.
+- Data visualization: starting at $75.
+
+## Contact and purchasing
+
+Use the store's quote form to describe the work and receive a quote before paid work begins. No registration, incorporation, or licensing status is implied by this information.

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mr Bubba Services</title>
+    <style>
+        :root { --bg: #0a0a0a; --surface: #141414; --surface-2: #1f1f1f; --border: #2a2a2a; --text: #f5f5f5; --text-2: #a1a1a1; --text-3: #555555; --accent: #3b82f6; --radius: 12px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+        .container { max-width: 600px; width: 100%; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 48px; }
+        h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--text-2); margin-bottom: 32px; }
+        .form-group { margin-bottom: 24px; }
+        label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+        label .required { color: var(--accent); }
+        input, select, textarea { width: 100%; padding: 12px 16px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 15px; transition: border-color 0.2s; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+        textarea { min-height: 100px; resize: vertical; font-family: inherit; }
+        select { cursor: pointer; }
+        .template-fields { display: none; padding: 24px; background: var(--surface-2); border-radius: 8px; margin-top: 24px; }
+        .template-fields.active { display: block; }
+        .btn { width: 100%; padding: 16px; background: var(--text); color: var(--bg); border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s; margin-top: 24px; }
+        .btn:hover { background: #e0e0e0; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .success { display: none; text-align: center; padding: 40px; }
+        .success.show { display: block; }
+        .success-icon { font-size: 64px; margin-bottom: 16px; }
+        .success h2 { font-size: 24px; margin-bottom: 8px; }
+        .success p { color: var(--text-2); }
+        .back-link { display: inline-block; margin-top: 24px; color: var(--accent); text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .rate-limit-info { font-size: 12px; color: var(--text-3); margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="formCard">
+            <h1>Get a Free Quote</h1>
+            <p class="subtitle">Fill out the form below and I'll get back to you within 24 hours.</p>
+            
+            <form id="contactForm" action="https://formsubmit.co/mrbubba@agentmail.to" method="POST">
+                <input type="hidden" name="_subject" value="New Inquiry from Website">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://rngbubba.github.io/mr-bubba-store/?sent=true">
+                
+                <div class="form-group">
+                    <label>Name <span class="required">*</span></label>
+                    <input type="text" name="name" required placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email <span class="required">*</span></label>
+                    <input type="email" name="email" required placeholder="you@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label>Business <span style="color: var(--text-3); font-weight: normal;">(optional)</span></label>
+                    <input type="text" name="business" placeholder="Your business name">
+                </div>
+                
+                <div class="form-group">
+                    <label>Type of Work <span class="required">*</span></label>
+                    <select name="serviceType" id="serviceType" required>
+                        <option value="">Select a service...</option>
+                        <option value="Data Cleanup">Data Cleanup</option>
+                        <option value="Website">Website Project</option>
+                        <option value="SaaS Product">SaaS Product</option>
+                        <option value="Business Automation">Business Automation</option>
+                        <option value="Spreadsheet Template">Spreadsheet Template</option>
+                        <option value="PDF Processing">PDF Processing</option>
+                        <option value="Data Visualization">Data Visualization</option>
+                        <option value="Resume & Cover Letter">Resume & Cover Letter</option>
+                        <option value="Lead List Research">Lead List Research</option>
+                        <option value="Business Proposal">Business Proposal</option>
+                        <option value="Email Copywriting">Email Copywriting</option>
+                        <option value="API Integration">API Integration</option>
+                        <option value="Social Media Content">Social Media Content</option>
+                        <option value="Database Report">Database Report</option>
+                    </select>
+                </div>
+                
+                <div class="template-fields" id="templateFields"></div>
+                
+                <button type="submit" class="btn" id="submitBtn">Send Message</button>
+                <p class="rate-limit-info">Limit: 3 submissions per hour per IP</p>
+            </form>
+            
+            <div class="success" id="successMessage">
+                <div class="success-icon">✅</div>
+                <h2>Message Sent!</h2>
+                <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+                <a href="https://rngbubba.github.io/mr-bubba-store/" class="back-link">← Back to store</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const templates = {
+            'Data Cleanup': { fields: [
+                { name: 'fileDescription', label: 'Describe your data (what kind of file, what issues)', type: 'textarea', required: true }
+            ]},
+            'Website': { fields: [
+                { name: 'businessDescription', label: 'Describe your business and what you do', type: 'textarea', required: true },
+                { name: 'websiteGoal', label: 'What is the main goal of your website?', type: 'text', required: true },
+                { name: 'examples', label: 'Links to websites you like (optional)', type: 'text', required: false }
+            ]},
+            'SaaS Product': { fields: [
+                { name: 'productDescription', label: 'Describe your SaaS product idea', type: 'textarea', required: true },
+                { name: 'targetMarket', label: 'Who is your target market?', type: 'text', required: true },
+                { name: 'features', label: 'Key features needed', type: 'textarea', required: false }
+            ]},
+            'Business Automation': { fields: [
+                { name: 'workflowDescription', label: 'Describe the task you want to automate', type: 'textarea', required: true },
+                { name: 'timeSpent', label: 'How much time does this take per week?', type: 'text', required: true }
+            ]},
+            'Spreadsheet Template': { fields: [
+                { name: 'templateType', label: 'What type of template do you need?', type: 'text', required: true },
+                { name: 'features', label: 'What features/formulas do you need?', type: 'textarea', required: false }
+            ]},
+            'PDF Processing': { fields: [
+                { name: 'pdfDescription', label: 'Describe what you need extracted from the PDF', type: 'textarea', required: true },
+                { name: 'outputFormat', label: 'What output format do you need? (CSV, Excel, Word)', type: 'text', required: true }
+            ]},
+            'Data Visualization': { fields: [
+                { name: 'dataDescription', label: 'Describe your data and what you want to visualize', type: 'textarea', required: true },
+                { name: 'chartTypes', label: 'What types of charts do you need?', type: 'text', required: false }
+            ]},
+            'Resume & Cover Letter': { fields: [
+                { name: 'targetRole', label: 'What role are you applying for?', type: 'text', required: true },
+                { name: 'jobDescription', label: 'Paste the job description (optional)', type: 'textarea', required: false }
+            ]},
+            'Lead List Research': { fields: [
+                { name: 'industry', label: 'What industry?', type: 'text', required: true },
+                { name: 'location', label: 'What location?', type: 'text', required: true },
+                { name: 'companySize', label: 'Company size preference?', type: 'text', required: false }
+            ]},
+            'Business Proposal': { fields: [
+                { name: 'projectDescription', label: 'Describe the project', type: 'textarea', required: true },
+                { name: 'deadline', label: 'Deadline (if any)', type: 'text', required: false }
+            ]},
+            'Email Copywriting': { fields: [
+                { name: 'productService', label: 'What product/service are you promoting?', type: 'text', required: true },
+                { name: 'emailType', label: 'What type of email? (welcome, promotional, follow-up)', type: 'text', required: true },
+                { name: 'targetAudience', label: 'Who is your target audience?', type: 'text', required: false }
+            ]},
+            'API Integration': { fields: [
+                { name: 'services', label: 'What services do you want to connect?', type: 'text', required: true },
+                { name: 'dataFlow', label: 'Describe the data flow', type: 'textarea', required: true }
+            ]},
+            'Social Media Content': { fields: [
+                { name: 'platforms', label: 'What platforms? (Instagram, Facebook, LinkedIn)', type: 'text', required: true },
+                { name: 'niche', label: 'What is your niche/industry?', type: 'text', required: true },
+                { name: 'goals', label: 'What are your content goals?', type: 'text', required: false }
+            ]},
+            'Database Report': { fields: [
+                { name: 'dataSource', label: 'What is your data source?', type: 'text', required: true },
+                { name: 'reportNeeds', label: 'What insights do you need?', type: 'textarea', required: true }
+            ]}
+        };
+        
+        // Pre-select from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const preselected = urlParams.get('service');
+        if (preselected && templates[preselected]) {
+            document.getElementById('serviceType').value = preselected;
+            loadTemplate(preselected);
+        }
+        
+        // Load template when service changes
+        document.getElementById('serviceType').addEventListener('change', function() {
+            loadTemplate(this.value);
+        });
+        
+        function loadTemplate(serviceType) {
+            const container = document.getElementById('templateFields');
+            container.innerHTML = '';
+            container.classList.remove('active');
+            if (!serviceType) return;
+            const data = templates[serviceType];
+            container.innerHTML = `<h3 style="margin-bottom: 16px;">${serviceType}</h3>`;
+            data.fields.forEach(field => {
+                const div = document.createElement('div');
+                div.className = 'form-group';
+                div.innerHTML = `
+                    <label>${field.label} ${field.required ? '<span class="required">*</span>' : ''}</label>
+                    ${field.type === 'textarea' 
+                        ? `<textarea name="${field.label}" ${field.required ? 'required' : ''} placeholder="Type here..."></textarea>`
+                        : `<input type="text" name="${field.label}" ${field.required ? 'required' : ''} placeholder="Type here...">`
+                    }
+                `;
+                container.appendChild(div);
+            });
+            container.classList.add('active');
+        }
+        
+        // Show success message if redirected back
+        if (urlParams.get('sent') === 'true') {
+            document.getElementById('formCard').innerHTML = '';
+            document.getElementById('successMessage').classList.add('show');
+        }
+    </script>
+</body>
+</html>

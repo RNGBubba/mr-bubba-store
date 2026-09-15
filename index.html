@@ -732,8 +732,14 @@
         cb.addEventListener('change', updateTextarea);
     });
 
+    // Support focused landing-page links that preselect a service.
+    var requestedService = new URLSearchParams(window.location.search).get('service');
+    if (requestedService) {
+        preselectService(requestedService);
+    }
+
     // Using inline onclick for service links
-</script></script>
+</script>
 
 </body>
 </html>

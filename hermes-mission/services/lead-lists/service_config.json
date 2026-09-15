@@ -1,0 +1,51 @@
+{
+  "service_name": "Lead List Research & Compilation",
+  "provider": "Mr Bubba Services",
+  "contact": "mrbubba@agentmail.to",
+  "api_key": "am_us_inbox_ec1c165f585ed00f28e1a6d17a4ddf198193d215e4c7fa9d8bcc9f6c2b3275e7",
+  "version": "1.0.0",
+  "pricing": {
+    "starter": {
+      "price": 60,
+      "currency": "USD",
+      "leads": 25,
+      "delivery_days": "3-5"
+    },
+    "standard": {
+      "price": 90,
+      "currency": "USD",
+      "leads": 50,
+      "delivery_days": "5-7"
+    },
+    "premium": {
+      "price": 120,
+      "currency": "USD",
+      "leads": 100,
+      "delivery_days": "7-10"
+    }
+  },
+  "data_sources": [
+    "Clearbit",
+    "OpenCorporates",
+    "Yelp Directory",
+    "Yellow Pages",
+    "Public Filings",
+    "Web Research"
+  ],
+  "output_formats": ["CSV", "JSON", "XLSX"],
+  "automation": {
+    "agentmail_responder": true,
+    "paypal_invoicing": true,
+    "csv_export": true,
+    "daemon_mode": true
+  },
+  "workflow": [
+    "Client sends inquiry with criteria",
+    "Auto-responder replies with pricing",
+    "Client confirms requirements",
+    "PayPal invoice sent",
+    "Upon payment, research begins",
+    "Lead list compiled and delivered",
+    "Follow-up support (7 days)"
+  ]
+}

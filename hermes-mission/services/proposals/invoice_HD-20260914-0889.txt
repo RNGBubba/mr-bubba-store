@@ -1,0 +1,27 @@
+
+============================================================
+MR BUBBA DATA SERVICES — INVOICE
+============================================================
+
+Invoice #:     HD-20260914-0889
+Date:          September 14, 2026
+Due Date:      September 28, 2026
+
+BILL TO:
+  Acme Corporation
+  billing@acme.com
+
+────────────────────────────────────────────────────────────
+DESCRIPTION
+────────────────────────────────────────────────────────────
+  Market Analysis & Growth Strategy Proposal
+
+────────────────────────────────────────────────────────────
+TOTAL DUE: $250.00 USD
+────────────────────────────────────────────────────────────
+
+Payment due within 14 days.
+Pay via PayPal: mrbubba@agentmail.to
+
+Questions? Reply to mrbubba@agentmail.to
+============================================================

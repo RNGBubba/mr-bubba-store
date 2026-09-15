@@ -1,0 +1,15 @@
+{
+  "brand_name": "FitFuel",
+  "tagline": "Power Your Potential",
+  "niche": "fitness",
+  "brand_colors": "#FF5733, #2C3E50, #FFFFFF",
+  "target_audience": {
+    "age_range": "22-35",
+    "interests": ["fitness", "nutrition", "wellness", "active lifestyle"],
+    "description": "Young professionals who prioritize health but struggle with consistency"
+  },
+  "platforms": ["Instagram", "TikTok", "Facebook"],
+  "tone": "motivational, authentic, approachable",
+  "content_themes": ["workout tips", "nutrition advice", "client transformations", "myth-busting"],
+  "upcoming_promotions": ["New Year challenge in January", "Spring shred program in March"]
+}

@@ -1,0 +1,28 @@
+{
+  "service_name": "Custom Spreadsheet Template Builder",
+  "version": "1.0.0",
+  "inbox_email": "mrbubba@agentmail.to",
+  "agentmail_api_key": "am_us_inbox_ec1c165f585ed00f28e1a6d17a4ddf198193d215e4c7fa9d8bcc9f6c2b3275e7",
+  "paypal": {
+    "environment": "sandbox",
+    "client_id": "",
+    "client_secret": "",
+    "webhook_id": ""
+  },
+  "pricing": {
+    "standard": 25,
+    "premium": 35,
+    "enterprise": 50
+  },
+  "templates": [
+    "budget",
+    "invoice",
+    "project",
+    "sales",
+    "inventory",
+    "payroll"
+  ],
+  "auto_respond": true,
+  "delivery_time_sla": "2 hours",
+  "support_hours": "Mon-Fri 9am-5pm UTC"
+}

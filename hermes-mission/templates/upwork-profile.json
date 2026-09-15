@@ -1,0 +1,53 @@
+{
+  "profile": {
+    "title": "Excel & CSV Data Cleaning Specialist | Python Automation",
+    "overview": "I help businesses transform messy, unorganized spreadsheets into clean, actionable data \u2014 fast.\n\nWith 5+ years of experience in data processing, Python automation, and Excel/Google Sheets, I specialize in taking the headache out of data cleanup so you can focus on what matters.\n\n**What I do:**\n- Clean messy CSV/Excel files (duplicates, inconsistent formatting, missing values)\n- Standardize dates, phone numbers, addresses across thousands of rows\n- Merge multiple spreadsheets and remove duplicate records\n- Build automation scripts so you can repeat the process yourself\n- Convert PDFs, text files, and unstructured data into organized spreadsheets\n\n**Why work with me:**\n- \u26a1 Fast turnaround: Most projects delivered within 24 hours\n- \u2705 Quality guaranteed: Unlimited revisions until you're satisfied\n- \ud83d\udd12 Secure: Your data is handled confidentially and never shared\n- \ud83d\udcac Clear communication: You'll always know the status of your project\n\n**Tools I use:** Python (pandas, openpyxl), Excel, Google Sheets, SQL, Power Query\n\nLet me know what you're working with \u2014 I'll give you a clear quote and timeline within hours.",
+    "skills": [
+      "Data Cleaning",
+      "Excel",
+      "Google Sheets",
+      "Python",
+      "Data Entry",
+      "Data Processing",
+      "CSV",
+      "Data Analysis",
+      "Data Mining",
+      "Spreadsheets"
+    ],
+    "hourly_rate": 45,
+    "project_preferences": [
+      "fixed",
+      "hourly"
+    ],
+    "categories": [
+      "Data Entry & Admin",
+      "Data Science & Analytics"
+    ]
+  },
+  "proposals": [
+    {
+      "job_url": "https://www.upwork.com/freelance-jobs/apply/Excel-file-clean_~022098871419858898425/",
+      "job_title": "Excel file clean up",
+      "job_budget": "$10 fixed",
+      "proposal": "Spreadsheet\n\nHi there,\n\nI saw your post about needing an Excel file cleanup, and I can help you with that right away.\n\nI specialize in cleaning messy spreadsheets \u2014 removing duplicates, fixing formatting inconsistencies, standardizing dates and numbers, and making the data organized and usable.\n\nFor $10, I can:\n- Remove duplicate rows\n- Fix inconsistent formatting (dates, phone numbers, addresses)\n- Trim whitespace and clean up text\n- Standardize column formats\n- Remove empty rows\n\nI can have this done within a few hours of receiving the file. Just send it over and I'll get started immediately.\n\nLooking forward to helping you get your spreadsheet clean!\n\nBest,\nMr Bubba"
+    },
+    {
+      "job_url": "https://www.upwork.com/freelance-jobs/apply/Data-Cleaning-Specialist-Needed-Excel-Google-Sheets_~022098696759785078920/",
+      "job_title": "Data Cleaning Specialist Needed \u2013 Excel / Google Sheets",
+      "job_budget": "$20 fixed",
+      "proposal": "Hi there,\n\nI'm a data cleaning specialist with extensive experience in Excel and Google Sheets. I can help you clean and organize your data quickly and accurately.\n\nHere's what I typically handle:\n- Removing duplicate records\n- Standardizing date formats, phone numbers, and addresses\n- Fixing inconsistent capitalization and formatting\n- Merging data from multiple sheets/files\n- Adding calculations and categorizations\n- Making the data presentation-ready\n\nI work fast \u2014 most projects are completed within 24 hours \u2014 and I always deliver clean, well-organized files.\n\nCould you share a sample of the data and let me know what \"clean\" looks like to you? I can give you a firm quote right away.\n\nBest,\nMr Bubba"
+    },
+    {
+      "job_url": "https://www.upwork.com/freelance-jobs/apply/Microsoft-Excel-Specialist-for-Data-Cleaning_~022098817937209834861/",
+      "job_title": "Microsoft Excel Specialist for Data Cleaning",
+      "job_budget": "$20 fixed",
+      "proposal": "Hi there,\n\nI'm an Excel specialist focused on data cleaning and organization. I can help you transform your messy data into a clean, usable format.\n\nMy approach:\n1. I review your data and identify all issues (duplicates, formatting, inconsistencies)\n2. I clean and standardize everything according to your requirements\n3. I deliver a polished file with documentation of what was changed\n\nI'm fast, thorough, and easy to work with. Most projects are done within 24 hours.\n\nWhat does your data look like? Send it over and I'll take a look \u2014 no obligation.\n\nBest,\nMr Bubba"
+    },
+    {
+      "job_url": "https://www.upwork.com/freelance-jobs/apply/Excel-Spreadsheet-Cleanup-and-Formatting-Assistant_~022087974483848046070/",
+      "job_title": "Excel Spreadsheet Cleanup and Formatting Assistant",
+      "job_budget": "$20 fixed",
+      "proposal": "Spreadsheet\n\nHi there,\n\nI can help you clean up and organize your Excel spreadsheet to make it easy to understand and use.\n\nI'll review your existing spreadsheet, identify issues (duplicates, formatting problems, organizational issues), and transform it into a clean, well-structured file.\n\nI work quickly and can deliver within your timeframe. Let me know what you need!\n\nBest,\nMr Bubba"
+    }
+  ]
+}

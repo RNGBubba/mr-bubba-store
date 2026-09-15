@@ -124,6 +124,7 @@
                 <a href="#services">Services</a>
                 <a href="bookkeeping-overflow.html">Accounting overflow</a>
                 <a href="csv-cleanup-for-crm-import.html">CRM import cleanup</a>
+                <a href="csv-cleaner-pro.html">CSV Cleaner Pro</a>
                 <a href="n8n-csv-google-sheets.html">n8n workflows</a>
                 <a href="#demos">Free Demos</a>
                 <a href="#process">Process</a>
@@ -542,6 +543,7 @@
             <a href="#services">Services</a>
             <a href="bookkeeping-overflow.html">Accounting overflow</a>
             <a href="csv-cleanup-for-crm-import.html">CRM import cleanup</a>
+            <a href="csv-cleaner-pro.html">CSV Cleaner Pro</a>
             <a href="n8n-csv-google-sheets.html">n8n workflows</a>
             <a href="#process">Process</a>
         </div>
@@ -582,6 +584,11 @@
                     <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 14px; transition: border-color 0.2s;">
                         <input type="checkbox" name="Services" value="Data Cleanup" style="width: 18px; height: 18px; accent-color: var(--accent);">
                         Data Cleanup
+                    </label>
+
+                    <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 14px; transition: border-color 0.2s;">
+                        <input type="checkbox" name="Services" value="CSV Cleaner Pro" style="width: 18px; height: 18px; accent-color: var(--accent);">
+                        CSV Cleaner Pro ($15)
                     </label>
 
                     <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 14px; transition: border-color 0.2s;">
@@ -677,6 +684,7 @@
     // Service questions templates
     var serviceTemplates = {
         "Data Cleanup": ["What type of file? (CSV, Excel, PDF, other)", "How many records/rows?", "What issues need fixing? (duplicates, formatting, missing data, etc.)", "What format should the cleaned data be delivered in?", "Any specific standards or requirements?"],
+        "CSV Cleaner Pro": ["Which operating system will run the script?", "CSV, Excel, or both?", "Approximate file size or row count?", "Which cleanup rules matter most? (duplicates, dates, phone fields, whitespace, text normalization)", "Please confirm this is for personal use and describe the desired example output."],
         "CRM Import Cleanup": ["Which CRM are you importing into? (HubSpot, Salesforce, Pipedrive, Zoho, other)", "What type of file and approximate row count?", "Which fields should be matched or preserved as identifiers?", "What duplicate, formatting, or validation issues should be handled?", "Please describe the desired output using a fictional or redacted sample."],
         "Website": ["What is the primary purpose of the website? (portfolio, business, e-commerce, blog, etc.)", "Do you have a domain name already?", "How many pages do you need?", "Do you have branding/logo/colors, or do you need help with that?", "Any specific features? (contact form, booking, payments, user accounts, etc.)", "Do you have content/text ready, or do you need copywriting?", "Timeline and budget range?"],
         "SaaS Product": ["What problem does your SaaS solve?", "Who is your target user/customer?", "What are the core features for MVP?", "Do you need user authentication and subscription billing?", "Any third-party integrations needed?", "Timeline and budget range?"],
@@ -742,6 +750,7 @@
         if (!found) {
             var keymap = {
                 'data-cleanup': 'Data Cleanup',
+                'csv-cleaner-pro': 'CSV Cleaner Pro',
                 'crm-cleanup': 'CRM Import Cleanup',
                 'website': 'Website',
                 'saas-product': 'SaaS Product',

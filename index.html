@@ -671,21 +671,16 @@
     }
 
     function preselectService(service) {
-        if (!service) return;
-        
-        console.log('preselectService called with:', service);
+        if (!service) return false;
         
         var checkboxes = document.querySelectorAll('input[name="Services"]');
-        console.log('Found ' + checkboxes.length + ' checkboxes');
         
-        // Try case-insensitive match first
+        // Try case-insensitive match
         var found = false;
         checkboxes.forEach(function(cb) {
-            console.log('  Checking: "' + cb.value + '" vs "' + service + '"');
             if (cb.value.toLowerCase() === service.toLowerCase()) {
                 cb.checked = true;
                 found = true;
-                console.log('  -> MATCH! Checked.');
             }
         });
         
@@ -708,7 +703,7 @@
                 'resume': 'Resume & Cover Letter'
             };
             
-            var mapped = keymap[service.toLowerCase()] || keymap[service];
+            var mapped = keymap[service.toLowerCase()];
             if (mapped) {
                 checkboxes.forEach(function(cb) {
                     if (cb.value.toLowerCase() === mapped.toLowerCase()) {
@@ -719,6 +714,14 @@
         }
         
         updateTextarea();
+        
+        // Scroll to contact form
+        var form = document.getElementById('contact-form');
+        if (form) {
+            form.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+        
+        return false;
     }
 
     // Initialize event listeners (script is at bottom of page, DOM is ready)

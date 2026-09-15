@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Offline Roofing & Stair Calculator Pilot</title>
+  <meta name="description" content="A local-first preliminary roof-rafter and stair rise/run calculator for trade workflows. Pilot requests from $12.">
+  <link rel="canonical" href="https://rngbubba.github.io/mr-bubba-store/offline-trade-calculator.html">
+  <meta property="og:title" content="Offline Roofing & Stair Calculator">
+  <meta property="og:description" content="Preliminary roof-rafter and stair layout calculations without cloud upload or account setup.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rngbubba.github.io/mr-bubba-store/offline-trade-calculator.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#000;--surface:#0a0a0a;--border:#242424;--text:#fafafa;--muted:#969696;--blue:#3b82f6;--max:1120px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif}a{color:inherit}.nav{border-bottom:1px solid var(--border);padding:20px 28px}.navin{max-width:var(--max);margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center}.logo{text-decoration:none;font-weight:700}.nav a:not(.logo){color:var(--muted);font-size:14px;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 28px}.hero{padding:105px 0 70px}.eyebrow,.label{font:12px 'JetBrains Mono',monospace;color:#666;text-transform:uppercase;letter-spacing:.12em}.hero h1{font-size:clamp(44px,7vw,78px);line-height:1.03;letter-spacing:-.055em;max-width:900px;margin:26px 0}.serif{font-family:'Playfair Display',serif}.lead{color:var(--muted);font-size:20px;max-width:760px}.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}.btn{display:inline-block;padding:14px 22px;border-radius:9px;text-decoration:none;font-weight:600}.primary{background:#fff;color:#000}.secondary{border:1px solid var(--border);color:#ddd}.section{border-top:1px solid var(--border);padding:65px 0}.section h2{font-size:clamp(30px,5vw,50px);line-height:1.1;letter-spacing:-.04em;margin:14px 0 26px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:25px}.card h3{margin-top:0}.card p,.note{color:var(--muted)}.demo{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.demo label{color:var(--muted);font-size:13px}.demo input{width:100%;margin-top:6px;background:#101010;color:#fff;border:1px solid #333;border-radius:7px;padding:12px;font:16px 'JetBrains Mono',monospace}.output{margin-top:18px;border:1px solid #333;border-radius:8px;padding:18px;background:#080808;font-family:'JetBrains Mono',monospace;color:#b9d7ff;min-height:52px}.note{border-left:3px solid var(--blue);padding:16px 20px;background:var(--surface);margin-top:28px}.list{padding-left:20px;color:#ddd}.footer{border-top:1px solid var(--border);padding:25px 0;color:#666;font-size:13px;display:flex;justify-content:space-between}@media(max-width:700px){.grid,.demo{grid-template-columns:1fr}.nav a:not(.logo){display:none}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Offline Roofing & Stair Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Linux / offline browser","description":"A preliminary local-first roof-rafter and stair rise/run calculator.","url":"https://rngbubba.github.io/mr-bubba-store/offline-trade-calculator.html","offers":{"@type":"Offer","priceCurrency":"USD","price":"12","url":"https://rngbubba.github.io/mr-bubba-store/index.html?service=trade-calculator#contact-form"}}</script>
+</head>
+<body>
+  <nav class="nav"><div class="navin"><a class="logo" href="index.html">Mr Bubba Services</a><a href="index.html?service=trade-calculator#contact-form">Request pilot →</a></div></nav>
+  <main class="wrap">
+    <section class="hero"><div class="eyebrow">Local-first trade workflow utility</div><h1>Small calculations. <span class="serif">Clear assumptions.</span></h1><p class="lead">A focused offline calculator for preliminary roof-rafter geometry and stair rise/run layouts—without cloud upload, account setup, telemetry, or a material-price database.</p><div class="actions"><a class="btn primary" href="#demo">Try the free demo ↓</a><a class="btn secondary" href="index.html?service=trade-calculator#contact-form">Request a $12 pilot →</a></div></section>
+    <section class="section"><div class="label">Two narrow workflows</div><h2>Built for inspection, not feature bloat.</h2><div class="grid"><article class="card"><h3>Roof-rafter geometry</h3><p>Enter full span and rise/run pitch. The demo reports half-span run, proportional rise, and the right-triangle rafter estimate.</p></article><article class="card"><h3>Preliminary stair layout</h3><p>Enter total rise, a user-supplied maximum riser, and minimum tread. The demo reports riser count, actual rise, tread count, and total run.</p></article></div></section>
+    <section class="section" id="demo"><div class="label">Free browser demo</div><h2>Check the arithmetic locally in your browser.</h2><div class="demo"><label>Full span (ft)<input id="span" type="number" min="0.01" step="0.01" value="20"></label><label>Rise (in)<input id="rise" type="number" min="0.01" step="0.01" value="6"></label><label>Run (in)<input id="pitchRun" type="number" min="0.01" step="0.01" value="12"></label></div><div class="output" id="roofOutput">Enter dimensions to calculate.</div><div class="actions"><button class="btn primary" id="calcRoof" type="button">Calculate roof rafter</button></div></section>
+    <section class="section"><div class="label">Pilot scope · $12</div><h2>One offline utility, one trade workflow.</h2><ul class="list"><li>Local Python/JSON utility with roof-rafter and stair-layout calculations.</li><li>Visible assumptions and printable/CSV-friendly output planned for the pilot.</li><li>No engineering, structural, safety, permit, or building-code advice.</li><li>Every result must be checked by a qualified professional and against applicable local requirements before construction or purchase.</li></ul><div class="note"><strong>Safety boundary:</strong> This is preliminary planning software. It does not certify a design, replace a code review, or determine whether construction is safe or permitted. The current prototype has no paid customer or revenue.</div><div class="actions"><a class="btn primary" href="index.html?service=trade-calculator#contact-form">Describe a pilot request →</a></div></section>
+  </main>
+  <footer class="wrap footer"><span>Offline-first prototype · No customer data is uploaded.</span><a href="index.html?service=trade-calculator#contact-form">Contact</a></footer>
+  <script>
+    document.getElementById('calcRoof').addEventListener('click', function () {
+      const span=Number(document.getElementById('span').value), rise=Number(document.getElementById('rise').value), run=Number(document.getElementById('pitchRun').value);
+      const out=document.getElementById('roofOutput');
+      if (!(span>0 && rise>0 && run>0)) { out.textContent='Use positive dimensions.'; return; }
+      const r=span/2, h=r*rise/run, length=Math.hypot(r,h);
+      out.textContent=`Run: ${r.toFixed(3)} ft · Rise: ${h.toFixed(3)} ft · Rafter estimate: ${length.toFixed(3)} ft`;
+    });
+  </script>
+</body>
+</html>

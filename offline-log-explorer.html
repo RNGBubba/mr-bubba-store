@@ -24,10 +24,12 @@
     <section class="card"><h3>Safer sharing</h3><p>Export a redacted subset, but inspect it yourself. Redaction is assistance, not a guarantee.</p></section>
   </div>
   <section class="demo" aria-labelledby="demo-title"><h2 id="demo-title">Synthetic browser demo</h2>
-    <div class="controls"><select id="level" aria-label="Severity"><option value="">All severities</option><option>INFO</option><option>WARN</option><option>ERROR</option></select><input id="trace" placeholder="Trace ID (e.g. tr-100)" aria-label="Trace ID"><input id="text" placeholder="Search message" aria-label="Message search"><button id="run">Filter events</button><button id="redact">Redact visible</button></div>
+    <div class="controls"><select id="level" aria-label="Severity"><option value="">All severities</option><option>INFO</option><option>WARN</option><option>ERROR</option></select><input id="trace" placeholder="Trace ID (e.g. t-100)" aria-label="Trace ID"><input id="text" placeholder="Search message" aria-label="Message search"><button id="run">Filter events</button><button id="redact">Redact visible</button></div>
     <pre id="output" aria-live="polite"></pre><p class="small">Synthetic data only. Nothing typed here is transmitted.</p>
   </section>
   <h2>Paid pilot — $15 fixed scope</h2>
+  <p><a class="cta" href="offline-log-explorer-v0.1.0.zip" download>Download the local prototype bundle</a></p>
+  <p class="small">The bundle contains the dependency-free script, synthetic sample, tests, README, and pilot scope. Review the README before using it with any data.</p>
   <p>Receive a local command-line bundle configured for your declared JSONL/CSV fields, with a short run guide and redacted-export examples. One machine, synthetic or redacted sample data only, no cloud deployment, no compliance certification.</p>
   <p class="note"><strong>Important:</strong> Logs may contain passwords, tokens, personal information, or proprietary code. Keep processing local, inspect exports, and do not treat this tool as guaranteed secret removal or a security/compliance assessment.</p>
   <a class="cta" href="index.html?service=offline-log-explorer#contact-form">Request the $15 pilot</a>

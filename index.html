@@ -123,6 +123,7 @@
                 <a href="#web-apps">Web Apps</a>
                 <a href="#services">Services</a>
                 <a href="bookkeeping-overflow.html">Accounting overflow</a>
+                <a href="n8n-csv-google-sheets.html">n8n workflows</a>
                 <a href="#demos">Free Demos</a>
                 <a href="#process">Process</a>
                 <a href="#contact-form" class="nav-cta">Start a Project →</a>
@@ -524,6 +525,7 @@
             <a href="#web-apps">Web Apps</a>
             <a href="#services">Services</a>
             <a href="bookkeeping-overflow.html">Accounting overflow</a>
+            <a href="n8n-csv-google-sheets.html">n8n workflows</a>
             <a href="#process">Process</a>
         </div>
     </footer>
@@ -577,6 +579,11 @@
                     <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 14px; transition: border-color 0.2s;">
                         <input type="checkbox" name="Services" value="Business Automation" style="width: 18px; height: 18px; accent-color: var(--accent);">
                         Business Automation
+                    </label>
+
+                    <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 14px; transition: border-color 0.2s;">
+                        <input type="checkbox" name="Services" value="n8n Workflow" style="width: 18px; height: 18px; accent-color: var(--accent);">
+                        n8n Workflow ($150+)
                     </label>
 
                     <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 14px; transition: border-color 0.2s;">
@@ -650,6 +657,7 @@
         "Website": ["What is the primary purpose of the website? (portfolio, business, e-commerce, blog, etc.)", "Do you have a domain name already?", "How many pages do you need?", "Do you have branding/logo/colors, or do you need help with that?", "Any specific features? (contact form, booking, payments, user accounts, etc.)", "Do you have content/text ready, or do you need copywriting?", "Timeline and budget range?"],
         "SaaS Product": ["What problem does your SaaS solve?", "Who is your target user/customer?", "What are the core features for MVP?", "Do you need user authentication and subscription billing?", "Any third-party integrations needed?", "Timeline and budget range?"],
         "Business Automation": ["What task or process do you want to automate?", "How is it done currently? (manual, spreadsheets, etc.)", "How many hours per week does it take?", "What systems/tools are involved?", "What should the automated output look like?"],
+        "n8n Workflow": ["What starts the workflow? (CSV email attachment, webhook, schedule, other)", "What destination should receive the data? (Google Sheets, database, other)", "What stable field identifies an existing record?", "What should happen when a record matches, is new, or is malformed?", "Please describe the desired test input and expected output using fictional or redacted data."],
         "Spreadsheet Template": ["What is the spreadsheet for? (budget, tracking, reporting, etc.)", "What formulas or automation do you need?", "Do you have sample data or examples?", "Any specific formatting requirements?", "Single user or multiple users?"],
         "Resume & Cover Letter": ["What role/industry are you targeting?", "Do you have a current resume to update, or start fresh?", "Do you have a specific job description to tailor to?", "Any specific achievements or metrics to highlight?", "How many resumes/cover letters do you need?"],
         "Lead List Research": ["What industry/niche?", "What geographic area?", "What company size? (employees, revenue)", "What publicly available company information do you need on each entry?", "How many entries do you need?", "What lawful, permission-based use case will the research support?"],
@@ -713,6 +721,7 @@
                 'website': 'Website',
                 'saas-product': 'SaaS Product',
                 'automation': 'Business Automation',
+                'n8n-workflow': 'n8n Workflow',
                 'spreadsheet': 'Spreadsheet Template',
                 'pdf-processing': 'PDF Processing',
                 'data-viz': 'Data Visualization',

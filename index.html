@@ -791,6 +791,18 @@
         preselectService(requestedService);
     }
 
+    // Require a service selection so quote requests are classifiable.
+    var quoteForm = document.getElementById('quoteForm');
+    if (quoteForm) {
+        quoteForm.addEventListener('submit', function(event) {
+            var selected = document.querySelectorAll('input[name="Services"]:checked');
+            if (selected.length === 0) {
+                event.preventDefault();
+                alert('Please select at least one service so the request can be scoped.');
+            }
+        });
+    }
+
     // Using inline onclick for service links
 </script>
 

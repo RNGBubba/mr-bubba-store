@@ -672,9 +672,22 @@
     }
 
     function preselectFromHash() {
+        // Check both hash and search params because ?service= in hash gets parsed as search
+        var search = window.location.search;
         var hash = window.location.hash;
-        if (hash && hash.indexOf('contact-form?service=') !== -1) {
-            var service = decodeURIComponent(hash.split('service=')[1]);
+        
+        var service = null;
+        
+        // Try to get service from search params first (?service=website)
+        if (search && search.indexOf('service=') !== -1) {
+            service = decodeURIComponent(search.split('service=')[1]);
+        }
+        // Fallback to hash (for #contact-form?service=website format)
+        else if (hash && hash.indexOf('contact-form?service=') !== -1) {
+            service = decodeURIComponent(hash.split('service=')[1]);
+        }
+        
+        if (service) {
             var checkboxes = document.querySelectorAll('input[name="Services"]');
             checkboxes.forEach(function(cb) {
                 if (cb.value === service) {
@@ -694,6 +707,7 @@
         preselectFromHash();
     });
     window.addEventListener('hashchange', preselectFromHash);
+    window.addEventListener('popstate', preselectFromHash);
 
 </script>
 

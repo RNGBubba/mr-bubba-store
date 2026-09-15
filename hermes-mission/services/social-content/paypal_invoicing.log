@@ -1,6 +1,0 @@
-2026-09-14 20:56:10,264 [INFO] Creating invoice for client@example.com — week package for FitFuel
-2026-09-14 20:56:10,265 [ERROR] PayPal credentials not configured. Set PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET.
-2026-09-14 20:56:10,265 [INFO] PayPal API unavailable — generating local invoice draft.
-2026-09-14 20:57:51,381 [INFO] Creating invoice for client@example.com — weekly package for FitFuel
-2026-09-14 20:57:51,381 [ERROR] PayPal credentials not configured. Set PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET.
-2026-09-14 20:57:51,381 [INFO] PayPal API unavailable — generating local invoice draft.

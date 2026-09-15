@@ -758,11 +758,11 @@
         }
         
         let text = '';
-        selectedServices.forEach((service, idx) {
+        selectedServices.forEach((service, idx) => {
             const questions = serviceTemplates[service] || [];
             text += '━━━ ' + service + ' ━━━
 ';
-            questions.forEach((q, i) {
+            questions.forEach((q, i) => {
                 text += '• ' + q + '
   [Your answer here]
 ';

@@ -584,6 +584,11 @@
                     </label>
 
                     <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 14px; transition: border-color 0.2s;">
+                        <input type="checkbox" name="Services" value="CRM Import Cleanup" style="width: 18px; height: 18px; accent-color: var(--accent);">
+                        CRM Import Cleanup ($75+)
+                    </label>
+
+                    <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 14px; transition: border-color 0.2s;">
                         <input type="checkbox" name="Services" value="Website" style="width: 18px; height: 18px; accent-color: var(--accent);">
                         Website
                     </label>
@@ -671,6 +676,7 @@
     // Service questions templates
     var serviceTemplates = {
         "Data Cleanup": ["What type of file? (CSV, Excel, PDF, other)", "How many records/rows?", "What issues need fixing? (duplicates, formatting, missing data, etc.)", "What format should the cleaned data be delivered in?", "Any specific standards or requirements?"],
+        "CRM Import Cleanup": ["Which CRM are you importing into? (HubSpot, Salesforce, Pipedrive, Zoho, other)", "What type of file and approximate row count?", "Which fields should be matched or preserved as identifiers?", "What duplicate, formatting, or validation issues should be handled?", "Please describe the desired output using a fictional or redacted sample."],
         "Website": ["What is the primary purpose of the website? (portfolio, business, e-commerce, blog, etc.)", "Do you have a domain name already?", "How many pages do you need?", "Do you have branding/logo/colors, or do you need help with that?", "Any specific features? (contact form, booking, payments, user accounts, etc.)", "Do you have content/text ready, or do you need copywriting?", "Timeline and budget range?"],
         "SaaS Product": ["What problem does your SaaS solve?", "Who is your target user/customer?", "What are the core features for MVP?", "Do you need user authentication and subscription billing?", "Any third-party integrations needed?", "Timeline and budget range?"],
         "Business Automation": ["What task or process do you want to automate?", "How is it done currently? (manual, spreadsheets, etc.)", "How many hours per week does it take?", "What systems/tools are involved?", "What should the automated output look like?"],
@@ -735,6 +741,7 @@
         if (!found) {
             var keymap = {
                 'data-cleanup': 'Data Cleanup',
+                'crm-cleanup': 'CRM Import Cleanup',
                 'website': 'Website',
                 'saas-product': 'SaaS Product',
                 'automation': 'Business Automation',

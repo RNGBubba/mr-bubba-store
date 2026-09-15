@@ -607,6 +607,10 @@
                     </label>
 
                     <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 14px; transition: border-color 0.2s;">
+                        <input type="checkbox" name="Services" value="Offline Structured-Log Explorer Pilot" style="width: 18px; height: 18px; accent-color: var(--accent);">
+                        Offline Structured-Log Explorer Pilot ($15)
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 14px; transition: border-color 0.2s;">
                         <input type="checkbox" name="Services" value="Website" style="width: 18px; height: 18px; accent-color: var(--accent);">
                         Website
                     </label>
@@ -698,6 +702,7 @@
         "CRM Import Cleanup": ["Which CRM are you importing into? (HubSpot, Salesforce, Pipedrive, Zoho, other)", "What type of file and approximate row count?", "Which fields should be matched or preserved as identifiers?", "What duplicate, formatting, or validation issues should be handled?", "Please describe the desired output using a fictional or redacted sample."],
         "13-Week Cash Visibility Brief": ["What type of owner-led B2B service firm is this for?", "What opening cash balance should the forecast use?", "Can you provide a redacted CSV with date, kind (inflow/outflow), description, amount, and certainty?", "Which payroll, tax, loan, or other required obligations must be represented?", "What minimum cash buffer should be highlighted?", "Please confirm you will not send bank credentials, account numbers, SSNs, payroll identifiers, customer names, or other sensitive personal data."],
         "Offline Trade Calculator Pilot": ["Which workflow do you need: roof-rafter layout, stair rise/run layout, or both?", "What units and input format do you use?", "Which assumptions should be visible in the output?", "Please confirm this is for preliminary planning only and will be checked by a qualified professional before construction."],
+        "Offline Structured-Log Explorer Pilot": ["Which input format do you need: JSONL, CSV, or both?", "Which timestamp, severity, message, trace-ID, or request-ID fields should be normalized?", "Which filters or redaction patterns matter most?", "Please confirm you will provide only synthetic or redacted samples and will inspect all exports before sharing."],
         "Website": ["What is the primary purpose of the website? (portfolio, business, e-commerce, blog, etc.)", "Do you have a domain name already?", "How many pages do you need?", "Do you have branding/logo/colors, or do you need help with that?", "Any specific features? (contact form, booking, payments, user accounts, etc.)", "Do you have content/text ready, or do you need copywriting?", "Timeline and budget range?"],
         "SaaS Product": ["What problem does your SaaS solve?", "Who is your target user/customer?", "What are the core features for MVP?", "Do you need user authentication and subscription billing?", "Any third-party integrations needed?", "Timeline and budget range?"],
         "Business Automation": ["What task or process do you want to automate?", "How is it done currently? (manual, spreadsheets, etc.)", "How many hours per week does it take?", "What systems/tools are involved?", "What should the automated output look like?"],
@@ -766,6 +771,7 @@
                 'crm-cleanup': 'CRM Import Cleanup',
                 'cash-visibility': '13-Week Cash Visibility Brief',
                 'trade-calculator': 'Offline Trade Calculator Pilot',
+                'offline-log-explorer': 'Offline Structured-Log Explorer Pilot',
                 'website': 'Website',
                 'saas-product': 'SaaS Product',
                 'automation': 'Business Automation',

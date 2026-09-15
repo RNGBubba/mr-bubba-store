@@ -621,7 +621,7 @@
     </div>
 </section>
 
-<script><script><script>
+<script>
     // Service questions templates
     var serviceTemplates = {
         "Data Cleanup": ["What type of file? (CSV, Excel, PDF, other)", "How many records/rows?", "What issues need fixing? (duplicates, formatting, missing data, etc.)", "What format should the cleaned data be delivered in?", "Any specific standards or requirements?"],
@@ -660,9 +660,9 @@
         var text = '';
         selectedServices.forEach(function(service) {
             var questions = serviceTemplates[service] || [];
-            text += '\u2501\u2501\u2501 ' + service + ' \u2501\u2501\u2501\n';
+            text += '━━━ ' + service + ' ━━━\n';
             questions.forEach(function(q) {
-                text += '\u2022 ' + q + '\n  [Your answer here]\n';
+                text += '• ' + q + '\n  [Your answer here]\n';
             });
             text += '\n';
         });
@@ -700,22 +700,23 @@
         }
     }
 
-    // Initialize when DOM is ready
-        var checkboxes = document.querySelectorAll('input[name="Services"]');
-        checkboxes.forEach(function(cb) {
-            cb.addEventListener('change', updateTextarea);
+    // Initialize event listeners
+    var checkboxes = document.querySelectorAll('input[name="Services"]');
+    checkboxes.forEach(function(cb) {
+        cb.addEventListener('change', updateTextarea);
+    });
+
+    // Handle clicks on service links
+    var serviceLinks = document.querySelectorAll('a[href="#contact-form"]');
+    serviceLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            var dataService = this.getAttribute('data-service');
+            if (dataService) {
+                preselectService(dataService.toLowerCase());
+            }
         });
-        
-        // Handle clicks on service links
-        var serviceLinks = document.querySelectorAll('a[href="#contact-form"]');
-        serviceLinks.forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                var dataService = this.getAttribute('data-service');
-                if (dataService) {
-                    preselectService(dataService.toLowerCase());
-                }
-            });
-        </script></script>
+    });
+</script></script>
 
 </body>
 </html>

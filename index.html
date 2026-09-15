@@ -671,33 +671,46 @@
     }
 
     function preselectService(service) {
-        var keymap = {
-            'data-cleanup': 'Data Cleanup',
-            'website': 'Website',
-            'saas-product': 'SaaS Product',
-            'automation': 'Business Automation',
-            'spreadsheet': 'Spreadsheet Template',
-            'pdf-processing': 'PDF Processing',
-            'data-viz': 'Data Visualization',
-            'email-copy': 'Email Copywriting',
-            'lead-list': 'Lead List Research',
-            'proposal': 'Business Proposal',
-            'database-report': 'Database Report',
-            'api-integration': 'API Integration',
-            'social-media': 'Social Media Content',
-            'resume': 'Resume & Cover Letter'
-        };
+        // Already in correct format if it matches a checkbox value
+        var checkboxes = document.querySelectorAll('input[name="Services"]');
         
-        if (service) {
-            service = keymap[service] || service;
-            var checkboxes = document.querySelectorAll('input[name="Services"]');
+        // Try direct match first
+        var found = false;
+        checkboxes.forEach(function(cb) {
+            if (cb.value === service) {
+                cb.checked = true;
+                found = true;
+            }
+        });
+        
+        // If no direct match, try keymap conversion
+        if (!found) {
+            var keymap = {
+                'data-cleanup': 'Data Cleanup',
+                'website': 'Website',
+                'saas-product': 'SaaS Product',
+                'automation': 'Business Automation',
+                'spreadsheet': 'Spreadsheet Template',
+                'pdf-processing': 'PDF Processing',
+                'data-viz': 'Data Visualization',
+                'email-copy': 'Email Copywriting',
+                'lead-list': 'Lead List Research',
+                'proposal': 'Business Proposal',
+                'database-report': 'Database Report',
+                'api-integration': 'API Integration',
+                'social-media': 'Social Media Content',
+                'resume': 'Resume & Cover Letter'
+            };
+            
+            var mapped = keymap[service.toLowerCase()] || keymap[service] || service;
             checkboxes.forEach(function(cb) {
-                if (cb.value === service) {
+                if (cb.value === mapped) {
                     cb.checked = true;
-                    updateTextarea();
                 }
             });
         }
+        
+        updateTextarea();
     }
 
     // Initialize event listeners

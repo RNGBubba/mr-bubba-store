@@ -623,129 +623,29 @@
 
 <script>
     // Service questions templates
-    const serviceTemplates = {
-  "Data Cleanup": [
-    "What type of file? (CSV, Excel, PDF, other)",
-    "How many records/rows?",
-    "What issues need fixing? (duplicates, formatting, missing data, etc.)",
-    "What format should the cleaned data be delivered in?",
-    "Any specific standards or requirements?"
-  ],
-  "Website": [
-    "What is the primary purpose of the website? (portfolio, business, e-commerce, blog, etc.)",
-    "Do you have a domain name already?",
-    "How many pages do you need?",
-    "Do you have branding/logo/colors, or do you need help with that?",
-    "Any specific features? (contact form, booking, payments, user accounts, etc.)",
-    "Do you have content/text ready, or do you need copywriting?",
-    "Timeline and budget range?"
-  ],
-  "SaaS Product": [
-    "What problem does your SaaS solve?",
-    "Who is your target user/customer?",
-    "What are the core features for MVP?",
-    "Do you need user authentication and subscription billing?",
-    "Any third-party integrations needed?",
-    "Timeline and budget range?"
-  ],
-  "Business Automation": [
-    "What task or process do you want to automate?",
-    "How is it done currently? (manual, spreadsheets, etc.)",
-    "How many hours per week does it take?",
-    "What systems/tools are involved?",
-    "What should the automated output look like?"
-  ],
-  "Spreadsheet Template": [
-    "What is the spreadsheet for? (budget, tracking, reporting, etc.)",
-    "What formulas or automation do you need?",
-    "Do you have sample data or examples?",
-    "Any specific formatting requirements?",
-    "Single user or multiple users?"
-  ],
-  "Resume & Cover Letter": [
-    "What role/industry are you targeting?",
-    "Do you have a current resume to update, or start fresh?",
-    "Do you have a specific job description to tailor to?",
-    "Any specific achievements or metrics to highlight?",
-    "How many resumes/cover letters do you need?"
-  ],
-  "Lead List Research": [
-    "What industry/niche?",
-    "What geographic area?",
-    "What company size? (employees, revenue)",
-    "What information do you need on each lead? (name, email, phone, etc.)",
-    "How many leads do you need?",
-    "How will you use the list? (cold email, calls, direct mail)"
-  ],
-  "Business Proposal": [
-    "What type of proposal? (project, partnership, investment, grant)",
-    "What is the project scope and timeline?",
-    "Who is the proposal for? (client, investor, partner)",
-    "Do you have existing branding/formatting?",
-    "What is the budget range?",
-    "Deadline for submission?"
-  ],
-  "Email Copywriting": [
-    "What type of email? (welcome sequence, promotional, nurture, etc.)",
-    "What is the product/service?",
-    "Who is the target audience?",
-    "How many emails do you need?",
-    "Do you have brand voice guidelines?",
-    "What is the goal? (sales, engagement, retention, etc.)"
-  ],
-  "Data Visualization": [
-    "What data do you have? (source, format, size)",
-    "What story should the data tell?",
-    "What types of charts do you need?",
-    "Is this a one-time report or recurring?",
-    "What format? (PDF report, dashboard, presentation, etc.)"
-  ],
-  "PDF Processing": [
-    "What type of PDFs? (forms, invoices, reports, scanned documents)",
-    "What data needs to be extracted?",
-    "How many PDFs do you need processed?",
-    "What output format? (Excel, CSV, Word, database)",
-    "Do the PDFs have a consistent format?"
-  ],
-  "API Integration": [
-    "What two services need to be connected?",
-    "What data needs to flow between them?",
-    "Is it one-way or two-way sync?",
-    "How often should it sync? (real-time, hourly, daily)",
-    "Do you have API credentials for both services?"
-  ],
-  "Social Media Content": [
-    "What platforms? (Instagram, Facebook, LinkedIn, Twitter, TikTok)",
-    "What is your niche/industry?",
-    "How many posts per week?",
-    "Do you need graphics, captions, or both?",
-    "Do you have brand guidelines or examples of content you like?",
-    "What are your goals? (awareness, engagement, sales)"
-  ],
-  "Database Report": [
-    "What database system do you use?",
-    "What data should the report cover?",
-    "How often do you need the report?",
-    "What format? (PDF, Excel, dashboard, etc.)",
-    "Who is the audience for the report?",
-    "Any specific KPIs or metrics?"
-  ]
-};
-    
-    // Track selected services
-    let selectedServices = [];
-    
-    // Get checkboxes
-    const checkboxes = document.querySelectorAll('input[name="Services"]');
-    const textarea = document.getElementById('projectDetails');
-    
-    checkboxes.forEach(cb => {
-        cb.addEventListener('change', updateTextarea);
-    });
-    
+    var serviceTemplates = {
+        "Data Cleanup": ["What type of file? (CSV, Excel, PDF, other)", "How many records/rows?", "What issues need fixing? (duplicates, formatting, missing data, etc.)", "What format should the cleaned data be delivered in?", "Any specific standards or requirements?"],
+        "Website": ["What is the primary purpose of the website? (portfolio, business, e-commerce, blog, etc.)", "Do you have a domain name already?", "How many pages do you need?", "Do you have branding/logo/colors, or do you need help with that?", "Any specific features? (contact form, booking, payments, user accounts, etc.)", "Do you have content/text ready, or do you need copywriting?", "Timeline and budget range?"],
+        "SaaS Product": ["What problem does your SaaS solve?", "Who is your target user/customer?", "What are the core features for MVP?", "Do you need user authentication and subscription billing?", "Any third-party integrations needed?", "Timeline and budget range?"],
+        "Business Automation": ["What task or process do you want to automate?", "How is it done currently? (manual, spreadsheets, etc.)", "How many hours per week does it take?", "What systems/tools are involved?", "What should the automated output look like?"],
+        "Spreadsheet Template": ["What is the spreadsheet for? (budget, tracking, reporting, etc.)", "What formulas or automation do you need?", "Do you have sample data or examples?", "Any specific formatting requirements?", "Single user or multiple users?"],
+        "Resume & Cover Letter": ["What role/industry are you targeting?", "Do you have a current resume to update, or start fresh?", "Do you have a specific job description to tailor to?", "Any specific achievements or metrics to highlight?", "How many resumes/cover letters do you need?"],
+        "Lead List Research": ["What industry/niche?", "What geographic area?", "What company size? (employees, revenue)", "What information do you need on each lead? (name, email, phone, etc.)", "How many leads do you need?", "How will you use the list? (cold email, calls, direct mail)"],
+        "Business Proposal": ["What type of proposal? (project, partnership, investment, grant)", "What is the project scope and timeline?", "Who is the proposal for? (client, investor, partner)", "Do you have existing branding/formatting?", "What is the budget range?", "Deadline for submission?"],
+        "Email Copywriting": ["What type of email? (welcome sequence, promotional, nurture, etc.)", "What is the product/service?", "Who is the target audience?", "How many emails do you need?", "Do you have brand voice guidelines?", "What is the goal? (sales, engagement, retention, etc.)"],
+        "Data Visualization": ["What data do you have? (source, format, size)", "What story should the data tell?", "What types of charts do you need?", "Is this a one-time report or recurring?", "What format? (PDF report, dashboard, presentation, etc.)"],
+        "PDF Processing": ["What type of PDFs? (forms, invoices, reports, scanned documents)", "What data needs to be extracted?", "How many PDFs do you need processed?", "What output format? (Excel, CSV, Word, database)", "Do the PDFs have a consistent format?"],
+        "API Integration": ["What two services need to be connected?", "What data needs to flow between them?", "Is it one-way or two-way sync?", "How often should it sync? (real-time, hourly, daily)", "Do you have API credentials for both services?"],
+        "Social Media Content": ["What platforms? (Instagram, Facebook, LinkedIn, Twitter, TikTok)", "What is your niche/industry?", "How many posts per week?", "Do you need graphics, captions, or both?", "Do you have brand guidelines or examples of content you like?", "What are your goals? (awareness, engagement, sales)"],
+        "Database Report": ["What database system do you use?", "What data should the report cover?", "How often do you need the report?", "What format? (PDF, Excel, dashboard, etc.)", "Who is the audience for the report?", "Any specific KPIs or metrics?"]
+    };
+
     function updateTextarea() {
-        selectedServices = [];
-        checkboxes.forEach(cb => {
+        var selectedServices = [];
+        var checkboxes = document.querySelectorAll('input[name="Services"]');
+        var textarea = document.getElementById('projectDetails');
+        
+        checkboxes.forEach(function(cb) {
             if (cb.checked) {
                 selectedServices.push(cb.value);
             }
@@ -757,30 +657,26 @@
             return;
         }
         
-        let text = '';
-        selectedServices.forEach((service, idx) => {
-            const questions = serviceTemplates[service] || [];
-            text += '━━━ ' + service + ' ━━━
-';
-            questions.forEach((q, i) => {
-                text += '• ' + q + '
-  [Your answer here]
-';
+        var text = '';
+        selectedServices.forEach(function(service) {
+            var questions = serviceTemplates[service] || [];
+            text += '━━━ ' + service + ' ━━━\n';
+            questions.forEach(function(q) {
+                text += '• ' + q + '\n  [Your answer here]\n';
             });
-            text += '
-';
+            text += '\n';
         });
         
         textarea.value = text;
         textarea.scrollTop = textarea.scrollHeight;
     }
-    
-    // Handle hash-based pre-selection from buttons
+
     function preselectFromHash() {
-        const hash = window.location.hash;
+        var hash = window.location.hash;
         if (hash && hash.indexOf('contact-form?service=') !== -1) {
-            const service = decodeURIComponent(hash.split('service=')[1]);
-            checkboxes.forEach(cb => {
+            var service = decodeURIComponent(hash.split('service=')[1]);
+            var checkboxes = document.querySelectorAll('input[name="Services"]');
+            checkboxes.forEach(function(cb) {
                 if (cb.value === service) {
                     cb.checked = true;
                     updateTextarea();
@@ -788,10 +684,17 @@
             });
         }
     }
-    
-    // Run on load and hash change
-    window.addEventListener('load', preselectFromHash);
+
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        var checkboxes = document.querySelectorAll('input[name="Services"]');
+        checkboxes.forEach(function(cb) {
+            cb.addEventListener('change', updateTextarea);
+        });
+        preselectFromHash();
+    });
     window.addEventListener('hashchange', preselectFromHash);
+
 </script>
 
 </body>

@@ -621,7 +621,7 @@
     </div>
 </section>
 
-<script>
+<script><script>
     // Service questions templates
     var serviceTemplates = {
         "Data Cleanup": ["What type of file? (CSV, Excel, PDF, other)", "How many records/rows?", "What issues need fixing? (duplicates, formatting, missing data, etc.)", "What format should the cleaned data be delivered in?", "Any specific standards or requirements?"],
@@ -660,42 +660,14 @@
         var text = '';
         selectedServices.forEach(function(service) {
             var questions = serviceTemplates[service] || [];
-            text += '━━━ ' + service + ' ━━━\n';
+            text += '\u2501\u2501\u2501 ' + service + ' \u2501\u2501\u2501\n';
             questions.forEach(function(q) {
-                text += '• ' + q + '\n  [Your answer here]\n';
+                text += '\u2022 ' + q + '\n  [Your answer here]\n';
             });
             text += '\n';
         });
         
         textarea.value = text;
-        textarea.scrollTop = textarea.scrollHeight;
-    }
-
-    function preselectFromHash() {
-        // Check both hash and search params because ?service= in hash gets parsed as search
-        var search = window.location.search;
-        var hash = window.location.hash;
-        
-        var service = null;
-        
-        // Try to get service from search params first (?service=website)
-        if (search && search.indexOf('service=') !== -1) {
-            service = decodeURIComponent(search.split('service=')[1]);
-        }
-        // Fallback to hash (for #contact-form?service=website format)
-        else if (hash && hash.indexOf('contact-form?service=') !== -1) {
-            service = decodeURIComponent(hash.split('service=')[1]);
-        }
-        
-        if (service) {
-            var checkboxes = document.querySelectorAll('input[name="Services"]');
-            checkboxes.forEach(function(cb) {
-                if (cb.value === service) {
-                    cb.checked = true;
-                    updateTextarea();
-                }
-            });
-        }
     }
 
     function preselectService(service) {
@@ -734,12 +706,19 @@
         checkboxes.forEach(function(cb) {
             cb.addEventListener('change', updateTextarea);
         });
-        preselectFromHash();
+        
+        // Handle clicks on service links
+        var serviceLinks = document.querySelectorAll('a[href="#contact-form"]');
+        serviceLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var dataService = this.getAttribute('data-service');
+                if (dataService) {
+                    preselectService(dataService.toLowerCase());
+                }
+            });
+        });
     });
-    window.addEventListener('hashchange', preselectFromHash);
-    window.addEventListener('popstate', preselectFromHash);
-
-</script>
+</script></script>
 
 </body>
 </html>

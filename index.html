@@ -673,14 +673,19 @@
     function preselectService(service) {
         if (!service) return;
         
+        console.log('preselectService called with:', service);
+        
         var checkboxes = document.querySelectorAll('input[name="Services"]');
+        console.log('Found ' + checkboxes.length + ' checkboxes');
         
         // Try case-insensitive match first
         var found = false;
         checkboxes.forEach(function(cb) {
+            console.log('  Checking: "' + cb.value + '" vs "' + service + '"');
             if (cb.value.toLowerCase() === service.toLowerCase()) {
                 cb.checked = true;
                 found = true;
+                console.log('  -> MATCH! Checked.');
             }
         });
         
@@ -724,11 +729,15 @@
 
     // Handle clicks on service links
     var serviceLinks = document.querySelectorAll('a[href="#contact-form"]');
+    console.log('Found ' + serviceLinks.length + ' service links');
     serviceLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            var dataService = this.getAttribute('data-service');
-            if (dataService) {
-                preselectService(dataService.toLowerCase());
+        var dataService = link.getAttribute('data-service');
+        console.log('  Link:', link.textContent.trim(), '->', dataService);
+        link.addEventListener('click', function(e) {
+            var ds = this.getAttribute('data-service');
+            console.log('Click! data-service:', ds);
+            if (ds) {
+                preselectService(ds);
             }
         });
     });

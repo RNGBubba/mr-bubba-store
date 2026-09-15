@@ -701,7 +701,6 @@
     }
 
     // Initialize when DOM is ready
-    document.addEventListener('DOMContentLoaded', function() {
         var checkboxes = document.querySelectorAll('input[name="Services"]');
         checkboxes.forEach(function(cb) {
             cb.addEventListener('change', updateTextarea);

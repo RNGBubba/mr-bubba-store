@@ -14,6 +14,7 @@
 - [13-Week Cash Visibility Brief](https://rngbubba.github.io/mr-bubba-store/cash-visibility-brief.html): redaction-first operational cash planning pilot from $49; not accounting, tax, legal, lending, investment, or insolvency advice.
 - [Offline Roofing & Stair Calculator](https://rngbubba.github.io/mr-bubba-store/offline-trade-calculator.html): free browser demo and preliminary local trade-calculation pilot from $12; not engineering or code-compliance advice.
 - [Offline Structured-Log Explorer](https://rngbubba.github.io/mr-bubba-store/offline-log-explorer.html): synthetic browser demo and local JSONL/CSV filtering/redaction pilot from $15; redaction is not guaranteed security or compliance.
+- [Local Accessibility QA Bookmarklet](https://rngbubba.github.io/mr-bubba-store/accessibility-qa.html): local browser heuristics for common accessibility signals with a $29 price hypothesis; not a WCAG conformance audit, legal opinion, or certification.
 
 ## Services
 
